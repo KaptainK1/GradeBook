@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.shape.*?>
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<GridPane hgap="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="900.0" vgap="10.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8">
+  <columnConstraints>
+    <ColumnConstraints hgrow="SOMETIMES" maxWidth="300.0" minWidth="300.0" prefWidth="300.0" />
+      <ColumnConstraints hgrow="SOMETIMES" maxWidth="300.0" minWidth="300.0" prefWidth="300.0" />
+    <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="300.0" />
+  </columnConstraints>
+  <rowConstraints>
+    <RowConstraints />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+  </rowConstraints>
+   <children>
+      <VBox prefWidth="300.0" GridPane.rowIndex="1">
+         <children>
+            <Label alignment="CENTER" prefHeight="17.0" prefWidth="263.0" text="Grade Items" />
+            <HBox prefHeight="44.0" prefWidth="203.0">
+               <children>
+                  <Label text="CourseID" wrapText="true">
+                     <HBox.margin>
+                        <Insets right="10.0" top="10.0" />
+                     </HBox.margin>
+                  </Label>
+                  <TextField fx:id="gradeItemCourseID" prefWidth="150.0" promptText="Enter CourseID">
+                     <HBox.margin>
+                        <Insets top="5.0" />
+                     </HBox.margin>
+                  </TextField>
+               </children>
+               <VBox.margin>
+                  <Insets top="20.0" />
+               </VBox.margin>
+            </HBox>
+            <HBox prefHeight="49.0" prefWidth="203.0">
+               <children>
+                  <Label text="StudentID" wrapText="true">
+                     <HBox.margin>
+                        <Insets right="10.0" top="10.0" />
+                     </HBox.margin>
+                  </Label>
+                  <TextField fx:id="gradeItemStudnetID" prefWidth="150.0" promptText="Enter StudentID">
+                     <HBox.margin>
+                        <Insets top="5.0" />
+                     </HBox.margin>
+                  </TextField>
+               </children>
+               <VBox.margin>
+                  <Insets top="20.0" />
+               </VBox.margin>
+            </HBox>
+            <HBox prefHeight="44.0" prefWidth="194.0">
+               <children>
+                  <Label text="Points Correct" wrapText="true">
+                     <HBox.margin>
+                        <Insets right="10.0" top="10.0" />
+                     </HBox.margin>
+                  </Label>
+                  <TextField fx:id="gradeItemPointsCorrect" prefWidth="150.0" promptText="Enter Points Correct">
+                     <HBox.margin>
+                        <Insets top="5.0" />
+                     </HBox.margin>
+                  </TextField>
+               </children>
+               <VBox.margin>
+                  <Insets top="20.0" />
+               </VBox.margin>
+            </HBox>
+            <HBox prefHeight="66.0" prefWidth="203.0">
+               <children>
+                  <Label text="Points Possible" wrapText="true">
+                     <HBox.margin>
+                        <Insets right="10.0" top="10.0" />
+                     </HBox.margin>
+                     <padding>
+                        <Insets right="30.0" />
+                     </padding>
+                  </Label>
+                  <TextField prefWidth="150.0" promptText="Enter Points Possible">
+                     <HBox.margin>
+                        <Insets top="5.0" />
+                     </HBox.margin>
+                  </TextField>
+               </children>
+               <VBox.margin>
+                  <Insets top="20.0" />
+               </VBox.margin>
+            </HBox>
+            <HBox prefHeight="92.0" prefWidth="194.0">
+               <children>
+                  <Button fx:id="gradeItemInsert" mnemonicParsing="false" onMouseClicked="#insertGradeItem" text="Insert" />
+                  <Button fx:id="gradeItemDelete" mnemonicParsing="false" onMouseClicked="#deleteGradeItem" text="Delete" />
+                  <Button fx:id="gradeItemSearch" mnemonicParsing="false" onMouseClicked="#searchGradeItem" text="Search" />
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+      <VBox prefWidth="300.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+         <children>
+            <Line endX="300.0" endY="400.0" startX="300.0" />
+         </children>
+      </VBox>
+      <VBox prefHeight="400.0" prefWidth="300.0" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+   </children>
+</GridPane>

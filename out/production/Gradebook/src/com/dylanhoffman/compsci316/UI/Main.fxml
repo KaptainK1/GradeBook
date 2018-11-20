@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="500.0" prefWidth="700.0" styleClass="anchor-pane" stylesheets="@stylesheet.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="src.com.dylanhoffman.compsci316.UI.MainController">
+   <children>
+      <TabPane layoutX="48.0" layoutY="76.0" prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
+        <tabs>
+          <Tab text="Courses">
+            <content>
+                <fx:include fx:id="courses" source="Courses.fxml" />
+            </content>
+            </Tab>
+          <Tab text="Students">
+            <content>
+                <fx:include fx:id="students" source="Students.fxml" />
+            </content>
+          </Tab>
+            <Tab text="Grades">
+                <content>
+                    <fx:include fx:id="gradeItems" source="GradeItems.fxml" />
+                </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</AnchorPane>

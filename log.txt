@@ -1,0 +1,2 @@
+Nov 19, 2018 11:43:44 PM src.com.dylanhoffman.compsci316.logging.Log writeToLog
+WARNING: Column index out of range.
