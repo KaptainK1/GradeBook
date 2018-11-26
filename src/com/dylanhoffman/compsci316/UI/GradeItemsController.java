@@ -18,7 +18,7 @@ import java.util.ArrayList;
 /**
  * Class to control the Grade Item UI
  */
-public class GradeItemsController {
+public class GradeItemsController extends MainController{
 
 
     //variables to interact with javaFX elements
@@ -110,11 +110,11 @@ public class GradeItemsController {
             GradeItem gradeItem = new GradeItem(name,pointsCorrect,pointsPossible);
             Student.insertGradeItem(studentsListView.getSelectionModel().getSelectedItem(),gradeItem,courseListView.getSelectionModel().getSelectedItem());
         } catch (NullPointerException e) {
-            displayAlertBox("Error - Student or Course Not Selected", "A Course and a Student must be selected!!");
+            super.displayAlertBox("Error - Student or Course Not Selected", "A Course and a Student must be selected!!");
         } catch (IllegalArgumentException e){
-            displayAlertBox("Error with GradeItem Data", e.getMessage());
+            super.displayAlertBox("Error with GradeItem Data", e.getMessage());
         } catch (Exception e){
-            displayAlertBox("General Error", "An error has occurred, please check the data and try again!");
+            super.displayAlertBox("General Error", "An error has occurred, please check the data and try again!");
         }
     }
 
@@ -138,9 +138,9 @@ public class GradeItemsController {
             //create a display box object to be shown to the user
             DisplayBox displayBox = new DisplayBox();
             //run the display boxes display grid pane method which will display a grid pane using a 2 dimension array
-            displayBox.displayGridPane( arrayGradeItems, "GradeItems For " + studentsListView.getSelectionModel().getSelectedItem(),"UI/stylesheet.css");
+            displayBox.displayGridPane( arrayGradeItems, "GradeItems For " + studentsListView.getSelectionModel().getSelectedItem(),"src/com/dylanhoffman/compsci316/UI/stylesheet.css");
         } catch (NullPointerException e){
-            displayAlertBox("Error While Searching", "A Student and a Course must be selected!");
+            super.displayAlertBox("Error While Searching", "A Student and a Course must be selected!");
         }
 
     }
@@ -172,9 +172,9 @@ public class GradeItemsController {
 
         } catch (NumberFormatException e) {
             clearFieldsOnDataException();
-            displayAlertBox("Error with Data", "All fields have been cleared, please try again");
+            super.displayAlertBox("Error with Data", "All fields have been cleared, please try again");
         } catch (NullPointerException e){
-            displayAlertBox("Error While Searching", "A Student and a Course must be selected!");
+            super.displayAlertBox("Error While Searching", "A Student and a Course must be selected!");
         }
     }
 
@@ -238,15 +238,15 @@ public class GradeItemsController {
 
     }
 
-    /**
-     * public method to display an alert box when an exception is thrown
-     * @param title title of the alert box
-     * @param message message to be displayed
-     */
-    public void displayAlertBox(String title, String message){
-        AlertBox alertBox = new AlertBox();
-        alertBox.display(title, message);
-    }
+//    /**
+//     * public method to display an alert box when an exception is thrown
+//     * @param title title of the alert box
+//     * @param message message to be displayed
+//     */
+//    public void displayAlertBox(String title, String message){
+//        AlertBox alertBox = new AlertBox();
+//        alertBox.display(title, message);
+//    }
 
 }
 

@@ -126,6 +126,21 @@ public class Student {
         insertQuery.executeQuery();
     }
 
+    /**
+     * method for inserting a single student into the Database
+     */
+    //method for inserting a single student into the current course
+    public static void insertStudent(String firstName, String lastName, int studentID){
+        //build the insert query
+        String strInsert = "into Students VALUES ( " + "'" + firstName + "' , '" + lastName + "' , " + studentID + " )";
+
+        //create the query object
+        Query insertQuery = new Query("GradeBook_Application", "root", "Winter I_S Coming!", INSERT, strInsert );
+        //execute the query
+        insertQuery.executeQuery();
+    }
+
+
     public static void insertGradeItem(Student student, GradeItem gradeItem, Course course){
 
         course.grade(gradeItem);

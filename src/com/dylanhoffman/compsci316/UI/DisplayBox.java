@@ -15,7 +15,7 @@ import javafx.stage.Stage;
 
 
 public class DisplayBox {
-
+    private static final String GRID_PANE = "grid-pane" ;
     //stylesheet must be in the format DisplayBox.class.getResource("main_style.css").toExternalForm()
     public void display(String strTitle, String strMessage, String stylesheet){
 
@@ -80,6 +80,8 @@ public class DisplayBox {
         }
 
         Scene scene = new Scene(gridPane, 400,400);
+        scene.getStylesheets().add(stylesheet);
+        gridPane.getStyleClass().add(GRID_PANE);
         window.setScene(scene);
         window.show(); // display the stage
 

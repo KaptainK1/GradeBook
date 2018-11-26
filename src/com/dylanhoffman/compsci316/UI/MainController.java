@@ -20,6 +20,16 @@ public class MainController {
 
     }
 
+    /**
+     * public method to display an alert box when an exception is thrown
+     * @param title title of the alert box
+     * @param message message to be displayed
+     */
+    public void displayAlertBox(String title, String message){
+        AlertBox alertBox = new AlertBox();
+        alertBox.display(title, message,"src/com/dylanhoffman/compsci316/UI/stylesheet.css");
+    }
+
 
 
 
