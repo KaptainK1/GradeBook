@@ -238,15 +238,25 @@ public class GradeItemsController extends MainController{
 
     }
 
-//    /**
-//     * public method to display an alert box when an exception is thrown
-//     * @param title title of the alert box
-//     * @param message message to be displayed
-//     */
-//    public void displayAlertBox(String title, String message){
-//        AlertBox alertBox = new AlertBox();
-//        alertBox.display(title, message);
-//    }
+    @FXML
+    void calculateStudentGrades(ActionEvent event) {
+        ArrayList<Student> students = new ArrayList<>();
+        DisplayBox displayBox = new DisplayBox();
+
+        try {
+            //create the select student query
+            SelectStudentGrades selectStudentGrades = new SelectStudentGrades("GradeBook_Application", "root", "Winter I_S Coming!");
+            students = selectStudentGrades.executeStudentQuery(courseListView.getSelectionModel().getSelectedItem());
+            courseListView.getSelectionModel().getSelectedItem().setStudents(students);
+            displayBox.display("Course Grades for Course" + courseListView.getSelectionModel().getSelectedItem(),
+                    courseListView.getSelectionModel().getSelectedItem().calculateAllStudentsInCourse(),
+                    "src/com/dylanhoffman/compsci316/UI/stylesheet.css");
+        } catch (NullPointerException e){
+            super.displayAlertBox("Error While Calculating", "A Course must be selected!");
+        }
+
+
+    }
 
 }
 

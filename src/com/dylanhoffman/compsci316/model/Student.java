@@ -4,6 +4,7 @@ import src.com.dylanhoffman.compsci316.logging.Log;
 import src.com.dylanhoffman.compsci316.utility.Query;
 import src.com.dylanhoffman.compsci316.utility.SelectStudentGrades;
 
+import java.sql.SQLIntegrityConstraintViolationException;
 import java.util.ArrayList;
 
 import static src.com.dylanhoffman.compsci316.utility.QueryType.DELETE;
@@ -130,7 +131,7 @@ public class Student {
      * method for inserting a single student into the Database
      */
     //method for inserting a single student into the current course
-    public static void insertStudent(String firstName, String lastName, int studentID){
+    public static void insertStudent(String firstName, String lastName, int studentID) throws SQLIntegrityConstraintViolationException {
         //build the insert query
         String strInsert = "into Students VALUES ( " + "'" + firstName + "' , '" + lastName + "' , " + studentID + " )";
 

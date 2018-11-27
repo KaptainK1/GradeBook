@@ -28,9 +28,9 @@
             <ListView fx:id="listViewGradeModels" prefHeight="200.0" prefWidth="200.0" GridPane.columnSpan="2" GridPane.rowIndex="4" />
             <HBox alignment="CENTER" prefWidth="400.0" GridPane.columnSpan="2" GridPane.rowIndex="5">
                <children>
-                  <Button mnemonicParsing="false" text="Insert" />
-                  <Button mnemonicParsing="false" text="Search" />
-                  <Button mnemonicParsing="false" text="Delete" />
+                  <Button mnemonicParsing="false" onAction="#insertCourse" text="Insert" />
+                  <Button mnemonicParsing="false" onAction="#searchCourses" text="Search" />
+                  <Button mnemonicParsing="false" onAction="#deleteCourse" text="Delete" />
                </children>
             </HBox>
             <TextField fx:id="coursesCourseID" promptText="Enter CourseID" GridPane.columnIndex="1" GridPane.rowIndex="1">

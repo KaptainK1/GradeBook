@@ -33,6 +33,14 @@ Coral = #ED8C72
     -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1 );
 }
 
+.grid-pane{
+    -fx-background-color: #2988BC;
+}
+
+.grid-pane .label {
+    -fx-text-fill: #F4EADE;
+}
+
 .text-field{
     -fx-text-fill: #2F496E;
     -fx-background-color: #F4EADE;

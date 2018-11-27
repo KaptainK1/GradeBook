@@ -49,7 +49,7 @@ public class DisplayBox {
 
     }
 
-    public void displayGridPane(String gradeItems[][], String strTitle, String stylesheet){
+    public void displayGridPane(String grid[][], String strTitle, String stylesheet){
 
         Stage window = new Stage();
         window.setTitle(strTitle);
@@ -65,22 +65,26 @@ public class DisplayBox {
             }
         });
 
-        //test this
+        //create a new gridpane and set the vgap and hgaps
         GridPane gridPane = new GridPane();
         gridPane.setGridLinesVisible(true);
-        gridPane.setVgap(10);
-        gridPane.setHgap(10);
+        gridPane.setVgap(25);
+        gridPane.setHgap(25);
 
-        for (int column = 0; column < gradeItems.length; column++) {
-            for (int row = 0; row < gradeItems[column].length; row++) {
-                Label label = new Label(gradeItems[column][row]);
+        //loop through each column, then through each cell in that column
+        for (int column = 0; column < grid.length; column++) {
+            for (int row = 0; row < grid[column].length; row++) {
+                //create a new label object, and add that to the position in the gridpane
+                Label label = new Label(grid[column][row]);
                 GridPane.setConstraints(label,column,row);
                 gridPane.getChildren().addAll(label);
             }
         }
-
+        //create a new scene object, add the style sheet
         Scene scene = new Scene(gridPane, 400,400);
         scene.getStylesheets().add(stylesheet);
+
+        //add the specified grid-pane style class as labeled in the css file then set the window to the scene
         gridPane.getStyleClass().add(GRID_PANE);
         window.setScene(scene);
         window.show(); // display the stage

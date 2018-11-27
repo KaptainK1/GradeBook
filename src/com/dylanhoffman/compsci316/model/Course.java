@@ -19,9 +19,9 @@ import java.util.ArrayList;
  */
 public class Course {
 
-    private int courseID;
-    private int courseNUM;
-    private String courseName;
+    private final int courseID;
+    private final int courseNUM;
+    private final String courseName;
     private ArrayList<Student> students = new ArrayList<>();
     private GradeModel gradeModel;
 
@@ -107,6 +107,14 @@ public class Course {
         insertQuery.executeQuery();
     }
 
+    public static void insertCourse(int courseID, int courseNUM, String courseName, String gradeModel){
+        String strInsert = "into Courses VALUES ( " + courseID + ", " + courseNUM + ", '" + courseName + "'" + ", '" + gradeModel +"' )";
+
+//        QueryType queryType = INSERT;
+        Query insertQuery = new Query("GradeBook_Application", "root", "Winter I_S Coming!", INSERT, strInsert );
+        insertQuery.executeQuery();
+    }
+
     /**
      * public method to set the gradeitem's grade based on the course's gradeModel
      * the GradeItem to be graded must be passed as the parameter
@@ -129,13 +137,51 @@ public class Course {
 
         //create a new character array to hold the grade values
         Character[] grades = new Character[2];
+        StringBuilder strGrades = new StringBuilder(500);
         //loop through the student array list
         for (Student student: getStudents()) {
 
             grades = this.retrieveStudentGrades(student);
             System.out.println("Student " + student.getFirstName() + " " + student.getLastName() + " earned a(n) " + grades[0] + grades[1] + " in course " + this);
+            strGrades.append(student.getFirstName()).append(" ").append(student.getLastName()).append(" earned a(n) " ).append(grades[0]).append(grades[1]);
         }
     }
+
+    public String calculateAllStudentsInCourse(){
+        //create a new character array to hold the grade values
+        Character[] grades;
+        StringBuilder strGrades = new StringBuilder(500);
+        //loop through the student array list
+        for (Student student: getStudents()) {
+
+            grades = this.retrieveStudentGrades(student);
+            strGrades.append(student.getFirstName()).append(" ").append(student.getLastName()).append(" earned a(n) " ).append(grades[0]).append(grades[1]).append("\n");
+        }
+
+        return String.valueOf(strGrades);
+    }
+
+    /**
+     * public static method to delete all students and gradeitems from the Database
+     * method also deletes all gradeitems for the student
+     */
+    public void deleteCourse(){
+        //first delete all grade items for the student
+
+        for (Student currentStudent: this.getStudents()) {
+            Student.deleteStudent(currentStudent.getStudentID());
+        }
+
+        //build the query
+        String strDelete = "from Courses WHERE CourseID = " + this.getCourseID();
+
+        //create the query object
+        Query deleteQuery = new Query("GradeBook_Application", "root", "Winter I_S Coming!", DELETE, strDelete );
+
+        //execute the query
+        deleteQuery.executeQuery();
+    }
+
 
     /**
      * public method to remove a student from the course
@@ -192,26 +238,14 @@ public class Course {
 //        System.out.println("Student " + student.getFirstName() + " " + student.getLastName() + " earned a(n) " + letterGrade[0] + letterGrade[1] + " in course " + this.getCourseName());
     }
 
-//    public void insertStudentIntoClass(Student student){
-//
-//        //build the insert query
-//        String strInsert = "into Class VALUES ( " + "'" + "NULL" + "' , '" + student.getStudentID() + "' , " + this.getCourseID() + " )";
-//        //set the query type to insert
-////        QueryType queryType = INSERT;
-//        //create the query object
-//        Query insertQuery = new Query("GradeBook_Application", "root", "Winter I_S Coming!", INSERT, strInsert );
-//        //execute the query
-//        insertQuery.executeQuery();
-//
-//    }
-//
-//
-//    //method for inserting multiple students into the database by accepting an array list of Students
-//    public void insertMultipleStudents(ArrayList<Student> student){
-//        for (Student currentStudent: student) {
-//            this.insertStudentIntoClass(currentStudent);
-//        }
-//    }
+    public static String[][] searchCourses(){
+
+        String query = "Select CourseID, CourseNUM, CourseName FROM Courses";
+
+        SelectStudentGrades selectStudentGrades = new SelectStudentGrades("GradeBook_Application", "root", "Winter I_S Coming!");
+        return selectStudentGrades.returnArrayOfDataFromQuery(query);
+
+    }
 
     /**
      * public method to override the toString method
@@ -231,13 +265,6 @@ public class Course {
         return courseNUM;
     }
 
-    /**
-     * public Setter method for
-     * @param courseNUM as int
-     */
-    public void setCourseNUM(int courseNUM) {
-        this.courseNUM = courseNUM;
-    }
 
     /**
      * public Getter method
@@ -247,13 +274,6 @@ public class Course {
         return courseName;
     }
 
-    /**
-     * public Setter method
-     * @param courseName as string
-     */
-    public void setCourseName(String courseName) {
-        this.courseName = courseName;
-    }
 
     /**
      * public Getter method
@@ -279,13 +299,6 @@ public class Course {
         return courseID;
     }
 
-    /**
-     * public Setter method for the course id
-     * @param courseID as int
-     */
-    public void setCourseID(int courseID) {
-        this.courseID = courseID;
-    }
 
     public GradeModel getGradeModel() {
         return gradeModel;

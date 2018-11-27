@@ -5,6 +5,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
 import src.com.dylanhoffman.compsci316.model.Student;
 
+import java.sql.SQLIntegrityConstraintViolationException;
 import java.util.InputMismatchException;
 
 
@@ -31,7 +32,10 @@ public class StudentsController extends MainController{
         } catch (IllegalArgumentException e){
             clearFieldsOnDataException();
             super.displayAlertBox("Error with Student Data!", e.getMessage());
-        } catch (Exception e){
+        } catch (SQLIntegrityConstraintViolationException e){
+            clearFieldsOnDataException();
+            super.displayAlertBox("Cannot Add Student with same ID", "Student ID entered matches another id already entered.");
+        }catch (Exception e){
             clearFieldsOnDataException();
             super.displayAlertBox("Generic Error with Adding Student", "Please Check the data entered for the student and try again.");
         }

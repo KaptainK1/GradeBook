@@ -68,7 +68,7 @@ public class Query {
      * creates the connection to the Database
      * then uses a prepared statement consisting of the query + the queryType enum
      */
-    public void executeQuery(){
+    public void executeQuery() {
 
         String query = (new StringBuilder().append(getQueryType().toString()).append(" ").append(getStrSelect()).toString());
         int rowCount = 1;
