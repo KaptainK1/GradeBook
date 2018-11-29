@@ -1,5 +1,6 @@
 package src.com.dylanhoffman.compsci316.model;
 
+import src.com.dylanhoffman.compsci316.Constants;
 import src.com.dylanhoffman.compsci316.logging.Log;
 import src.com.dylanhoffman.compsci316.model.grading.*;
 import src.com.dylanhoffman.compsci316.utility.Query;
@@ -7,6 +8,8 @@ import src.com.dylanhoffman.compsci316.utility.SelectStudentGrades;
 
 import static src.com.dylanhoffman.compsci316.utility.QueryType.DELETE;
 import static src.com.dylanhoffman.compsci316.utility.QueryType.INSERT;
+
+import java.sql.SQLException;
 import java.util.ArrayList;
 
 /**
@@ -43,7 +46,6 @@ public class Course {
 
         //check to see if the student id is 8 digits
 //        if (!isValidCourseID(courseID,6)) {
-//            Log.writeToLog("/Users/dhoffman/Documents/Gradebook/log.txt", "Invalid courseID");
 //            throw new IllegalArgumentException("Invalid courseID, must contain 6 digits");
 //        }
         this.courseID=courseID;
@@ -99,20 +101,20 @@ public class Course {
     /**
      * public method that inserts the course into the Database
      */
-    public void insertCourse(){
+    public void insertCourse() throws SQLException{
         String strInsert = "into Courses VALUES ( " + getCourseID() + ", " + getCourseNUM() + ", '" + getCourseName() + "'" + ", '" + getGradeModel().getClass().getSimpleName() +"' )";
 
 //        QueryType queryType = INSERT;
-        Query insertQuery = new Query("GradeBook_Application", "root", "Winter I_S Coming!", INSERT, strInsert );
-        insertQuery.executeQuery();
+        Query insertQuery = new Query(Constants.getDbName(), Constants.getDbUsername(), Constants.getDbPassword(), INSERT, strInsert );
+        insertQuery.executeQueryThrows();
     }
 
-    public static void insertCourse(int courseID, int courseNUM, String courseName, String gradeModel){
+    public static void insertCourse(int courseID, int courseNUM, String courseName, String gradeModel) throws SQLException {
         String strInsert = "into Courses VALUES ( " + courseID + ", " + courseNUM + ", '" + courseName + "'" + ", '" + gradeModel +"' )";
 
 //        QueryType queryType = INSERT;
-        Query insertQuery = new Query("GradeBook_Application", "root", "Winter I_S Coming!", INSERT, strInsert );
-        insertQuery.executeQuery();
+        Query insertQuery = new Query(Constants.getDbName(), Constants.getDbUsername(), Constants.getDbPassword(), INSERT, strInsert );
+        insertQuery.executeQueryThrows();
     }
 
     /**
@@ -133,7 +135,7 @@ public class Course {
     /**
      * main public method to calculate all grade items per student in the course
      */
-    public void calculateAllStudents(){
+    public void calculateAllStudents() throws SQLException{
 
         //create a new character array to hold the grade values
         Character[] grades = new Character[2];
@@ -147,7 +149,7 @@ public class Course {
         }
     }
 
-    public String calculateAllStudentsInCourse(){
+    public String calculateAllStudentsInCourse() throws SQLException{
         //create a new character array to hold the grade values
         Character[] grades;
         StringBuilder strGrades = new StringBuilder(500);
@@ -165,7 +167,7 @@ public class Course {
      * public static method to delete all students and gradeitems from the Database
      * method also deletes all gradeitems for the student
      */
-    public void deleteCourse(){
+    public void deleteCourse() throws SQLException{
         //first delete all grade items for the student
 
         for (Student currentStudent: this.getStudents()) {
@@ -176,10 +178,10 @@ public class Course {
         String strDelete = "from Courses WHERE CourseID = " + this.getCourseID();
 
         //create the query object
-        Query deleteQuery = new Query("GradeBook_Application", "root", "Winter I_S Coming!", DELETE, strDelete );
+        Query deleteQuery = new Query(Constants.getDbName(), Constants.getDbUsername(), Constants.getDbPassword(), DELETE, strDelete );
 
         //execute the query
-        deleteQuery.executeQuery();
+        deleteQuery.executeQueryThrows();
     }
 
 
@@ -190,7 +192,7 @@ public class Course {
      */
     public void removeStudentFromCourse(Student student){
         String query =  " from GradeItems where StudentID = " + student.getStudentID() + " AND CourseID = " + courseID;
-        Query insertQuery = new Query("GradeBook_Application", "root", "Winter I_S Coming!", DELETE, query );
+        Query insertQuery = new Query(Constants.getDbName(), Constants.getDbUsername(), Constants.getDbPassword(), DELETE, query );
     }
 
     /**
@@ -211,20 +213,20 @@ public class Course {
      * @return returns the grade as a Character Array
      */
     //method for calculating a single students grades for this given course
-    public Character[] retrieveStudentGrades(Student student){
+    public Character[] retrieveStudentGrades(Student student) throws SQLException{
         //values to hold totals to be retrieved
         int totalCorrect;
         int totalPossible;
         Character[] letterGrade = null;
 
         //instantiate the select student grades sql object
-        SelectStudentGrades selectStudentGrades = new SelectStudentGrades("GradeBook_Application", "root", "Winter I_S Coming!");
+        SelectStudentGrades selectStudentGrades = new SelectStudentGrades(Constants.getDbName(), Constants.getDbUsername(), Constants.getDbPassword());
 
         //set the total correct to the results of the query
-        totalCorrect = selectStudentGrades.executeStudentCorrectQuery(student.getStudentID(),this.getCourseID(), "TotalCorrect");
+        totalCorrect = selectStudentGrades.executeStudentCorrectQueryThrows(student.getStudentID(),this.getCourseID(), "TotalCorrect");
 
         //set the total possible to the results of the query
-        totalPossible = selectStudentGrades.executeStudentCorrectQuery(student.getStudentID(),this.getCourseID(), "TotalPossible");
+        totalPossible = selectStudentGrades.executeStudentCorrectQueryThrows(student.getStudentID(),this.getCourseID(), "TotalPossible");
 
         //set the letter grade by running the static method calculate letter grade total correct divided by total possible
         //catch invalid grade exception (no assignment from a-f)
@@ -242,7 +244,7 @@ public class Course {
 
         String query = "Select CourseID, CourseNUM, CourseName FROM Courses";
 
-        SelectStudentGrades selectStudentGrades = new SelectStudentGrades("GradeBook_Application", "root", "Winter I_S Coming!");
+        SelectStudentGrades selectStudentGrades = new SelectStudentGrades(Constants.getDbName(), Constants.getDbUsername(), Constants.getDbPassword());
         return selectStudentGrades.returnArrayOfDataFromQuery(query);
 
     }

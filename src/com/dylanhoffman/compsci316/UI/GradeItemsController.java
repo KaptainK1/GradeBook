@@ -14,6 +14,8 @@ import src.com.dylanhoffman.compsci316.model.Course;
 import src.com.dylanhoffman.compsci316.model.GradeItem;
 import src.com.dylanhoffman.compsci316.model.Student;
 import src.com.dylanhoffman.compsci316.utility.SelectStudentGrades;
+
+import java.sql.SQLException;
 import java.util.ArrayList;
 
 /**
@@ -64,6 +66,9 @@ public class GradeItemsController extends MainController{
                     public void changed(ObservableValue<? extends Course> observable, Course oldValue, Course newValue) {
                         //populate the student list based on the new value selected
                         try {
+                            allStudents.clear();
+                            students.removeAll();
+                            studentsListView.getItems().clear();
                             initializeStudentList(newValue);
                         } catch (NullPointerException e){
                             Log.writeToLog(Constants.getLogPath(),e.getMessage());
@@ -114,9 +119,12 @@ public class GradeItemsController extends MainController{
         } catch (NullPointerException e) {
             Log.writeToLog(Constants.getLogPath(),e.getMessage());
             super.displayAlertBox("Error - Student or Course Not Selected", "A Course and a Student must be selected!!");
-        } catch (IllegalArgumentException e){
-            Log.writeToLog(Constants.getLogPath(),e.getMessage());
+        } catch (IllegalArgumentException e) {
+            Log.writeToLog(Constants.getLogPath(), e.getMessage());
             super.displayAlertBox("Error with GradeItem Data", e.getMessage());
+        }catch (SQLException e){
+                Log.writeToLog(Constants.getLogPath(),e.getMessage());
+                super.displayAlertBox("Error with the Database", "Please check your data and try again.");
         } catch (Exception e){
             Log.writeToLog(Constants.getLogPath(),e.getMessage());
             super.displayAlertBox("General Error", "An error has occurred, please check the data and try again!");
@@ -183,6 +191,9 @@ public class GradeItemsController extends MainController{
         } catch (NullPointerException e){
             Log.writeToLog(Constants.getLogPath(),e.getMessage());
             super.displayAlertBox("Error While Searching", "A Student and a Course must be selected!");
+        } catch (SQLException e) {
+            Log.writeToLog(Constants.getLogPath(), e.getMessage());
+            super.displayAlertBox("Error with the Database", "Please check your data and try again");
         }
     }
 
@@ -197,7 +208,12 @@ public class GradeItemsController extends MainController{
         SelectStudentGrades selectStudentGrades = new SelectStudentGrades("GradeBook_Application", "root", "Winter I_S Coming!");
 
         //set the courses array list to the result of the course query
-        allCourses = selectStudentGrades.executeCourseQuery();
+        try {
+            allCourses = selectStudentGrades.executeCourseQueryThrows();
+        } catch (SQLException e) {
+            Log.writeToLog(Constants.getLogPath(),e.getMessage());
+            super.displayAlertBox("Error with initializing course list", "Error with the database, please try again");
+        }
 
         //add the array list to the observable array list
         courses.addAll(allCourses);
@@ -218,7 +234,12 @@ public class GradeItemsController extends MainController{
         SelectStudentGrades selectStudentGrades = new SelectStudentGrades("GradeBook_Application", "root", "Winter I_S Coming!");
 
         //run the student query method which builds an array list of student objects belonging to the course
-        allStudents = selectStudentGrades.executeStudentQuery(course);
+        try {
+            allStudents = selectStudentGrades.executeStudentQueryThrows(course);
+        } catch (SQLException e) {
+           Log.writeToLog(Constants.getLogPath(), e.getMessage());
+           super.displayAlertBox("Error with initializing course list", "There was an error with the database, please try again.");
+        }
 
         //set the observable array list to the returned array list
         students.addAll(allStudents);
@@ -254,7 +275,7 @@ public class GradeItemsController extends MainController{
         try {
             //create the select student query
             SelectStudentGrades selectStudentGrades = new SelectStudentGrades("GradeBook_Application", "root", "Winter I_S Coming!");
-            students = selectStudentGrades.executeStudentQuery(courseListView.getSelectionModel().getSelectedItem());
+            students = selectStudentGrades.executeStudentQueryThrows(courseListView.getSelectionModel().getSelectedItem());
             courseListView.getSelectionModel().getSelectedItem().setStudents(students);
             displayBox.display("Course Grades for Course" + courseListView.getSelectionModel().getSelectedItem(),
                     courseListView.getSelectionModel().getSelectedItem().calculateAllStudentsInCourse(),
@@ -262,6 +283,9 @@ public class GradeItemsController extends MainController{
         } catch (NullPointerException e){
             Log.writeToLog(Constants.getLogPath(),e.getMessage());
             super.displayAlertBox("Error While Calculating", "A Course must be selected!");
+        } catch (SQLException e) {
+            Log.writeToLog(Constants.getLogPath(), e.getMessage());
+            super.displayAlertBox("Error with Database", "Please check your data and try again");
         }
 
     }

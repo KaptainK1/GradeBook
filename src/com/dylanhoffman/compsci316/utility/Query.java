@@ -64,33 +64,48 @@ public class Query {
         this.url = url;
     }
 
+
+//    public void executeQuery() {
+//
+//        String query = (new StringBuilder().append(getQueryType().toString()).append(" ").append(getStrSelect()).toString());
+//        int rowCount = 1;
+//
+//        try (
+//                //create the connection object, then create the statement object
+//                Connection connection = DriverManager.getConnection( getUrl() + getDbName() + "?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true", getDbUser(), getDbPass());
+//                Statement statement = connection.prepareStatement(query)
+//            ) {
+//
+//            System.out.println("SQL Statement is " + query);
+//            int result = statement.executeUpdate(query);
+//            System.out.println("Total number of records = " + rowCount);
+//        } catch(SQLIntegrityConstraintViolationException e) {
+//            Log.writeToLog(Constants.getLogPath(), e.getMessage());
+//            System.out.println("Duplicate primary key, cannot insert same value twice!");
+//            e.printStackTrace();
+//        }
+//        catch (SQLException ex){
+//            Log.writeToLog(Constants.getLogPath(), ex.getMessage());
+//            ex.printStackTrace();
+//        }
+//    }
+
     /**
      * method to execute the query object
      * creates the connection to the Database
      * then uses a prepared statement consisting of the query + the queryType enum
      */
-    public void executeQuery() {
+    public void executeQueryThrows() throws SQLException {
 
         String query = (new StringBuilder().append(getQueryType().toString()).append(" ").append(getStrSelect()).toString());
         int rowCount = 1;
-        try (
                 //create the connection object, then create the statement object
                 Connection connection = DriverManager.getConnection( getUrl() + getDbName() + "?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true", getDbUser(), getDbPass());
-                Statement statement = connection.prepareStatement(query)
-            ) {
+                Statement statement = connection.prepareStatement(query);
 
             System.out.println("SQL Statement is " + query);
             int result = statement.executeUpdate(query);
             System.out.println("Total number of records = " + rowCount);
-        } catch(SQLIntegrityConstraintViolationException e) {
-            Log.writeToLog(Constants.getLogPath(), e.getMessage());
-            System.out.println("Duplicate primary key, cannot insert same value twice!");
-            e.printStackTrace();
-        }
-        catch (SQLException ex){
-            Log.writeToLog(Constants.getLogPath(), ex.getMessage());
-            ex.printStackTrace();
-        }
     }
 
     /**

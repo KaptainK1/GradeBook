@@ -5,6 +5,7 @@ import src.com.dylanhoffman.compsci316.logging.Log;
 import src.com.dylanhoffman.compsci316.utility.Query;
 import src.com.dylanhoffman.compsci316.utility.SelectStudentGrades;
 
+import java.sql.SQLException;
 import java.sql.SQLIntegrityConstraintViolationException;
 import java.util.ArrayList;
 
@@ -81,7 +82,7 @@ public class Student {
      * @param gradeItems an array of GradeItem objects
      * @param course a course that the gradeitem is for
      */
-    public void insertMultipleGradeItems(ArrayList<GradeItem> gradeItems, Course course){
+    public void insertMultipleGradeItems(ArrayList<GradeItem> gradeItems, Course course) throws SQLException{
         for (GradeItem currentGradeItem: gradeItems) {
             //insert the grade item into the db
             insertGradeItem(currentGradeItem, course);
@@ -94,55 +95,55 @@ public class Student {
      * @param gradeItem an GradeItem object to be inserted
      * @param course the course object the gradeitem is for
      */
-    public void insertGradeItem(GradeItem gradeItem, Course course){
+    public void insertGradeItem(GradeItem gradeItem, Course course) throws SQLException {
         //first, run the course's grade method to assign a grade letter to the grade item
         course.grade(gradeItem);
 
         String strInsert = "into GradeItems VALUES ( " + gradeItem.getTotalCorrect() + "," + gradeItem.getTotalPossible() + ", '" +
                 gradeItem.printLetterGrade() + "', " + "NULL, " + getStudentID() + ", " + course.getCourseID() + ", '" + gradeItem.getGradeName() + "' )";
 
-        Query insertQuery = new Query("GradeBook_Application", "root", "Winter I_S Coming!", INSERT, strInsert );
-        insertQuery.executeQuery();
+        Query insertQuery = new Query(Constants.getDbName(), Constants.getDbUsername(), Constants.getDbPassword(), INSERT, strInsert );
+        insertQuery.executeQueryThrows();
     }
 
     /**
      * method for inserting a single student into the Database
      */
     //method for inserting a single student into the current course
-    public void insertStudent(){
+    public void insertStudent() throws SQLException{
         //build the insert query
         String strInsert = "into Students VALUES ( " + "'" + getFirstName() + "' , '" + getLastName() + "' , " + getStudentID() + " )";
 
         //create the query object
-        Query insertQuery = new Query("GradeBook_Application", "root", "Winter I_S Coming!", INSERT, strInsert );
+        Query insertQuery = new Query(Constants.getDbName(), Constants.getDbUsername(), Constants.getDbPassword(), INSERT, strInsert );
         //execute the query
-        insertQuery.executeQuery();
+        insertQuery.executeQueryThrows();
     }
 
     /**
      * method for inserting a single student into the Database
      */
     //method for inserting a single student into the current course
-    public static void insertStudent(String firstName, String lastName, int studentID) throws SQLIntegrityConstraintViolationException {
+    public static void insertStudent(String firstName, String lastName, int studentID) throws SQLException {
         //build the insert query
         String strInsert = "into Students VALUES ( " + "'" + firstName + "' , '" + lastName + "' , " + studentID + " )";
 
         //create the query object
-        Query insertQuery = new Query("GradeBook_Application", "root", "Winter I_S Coming!", INSERT, strInsert );
+        Query insertQuery = new Query(Constants.getDbName(), Constants.getDbUsername(), Constants.getDbPassword(), INSERT, strInsert );
         //execute the query
-        insertQuery.executeQuery();
+        insertQuery.executeQueryThrows();
     }
 
 
-    public static void insertGradeItem(Student student, GradeItem gradeItem, Course course){
+    public static void insertGradeItem(Student student, GradeItem gradeItem, Course course) throws SQLException{
 
         course.grade(gradeItem);
 
         String strInsert = "into GradeItems VALUES ( " + gradeItem.getTotalCorrect() + "," + gradeItem.getTotalPossible() + ", '" +
                 gradeItem.printLetterGrade() + "', " + "NULL, " + student.getStudentID() + ", " + course.getCourseID() + ", '" + gradeItem.getGradeName() + "' )";
 
-        Query insertQuery = new Query("GradeBook_Application", "root", "Winter I_S Coming!", INSERT, strInsert );
-        insertQuery.executeQuery();
+        Query insertQuery = new Query(Constants.getDbName(), Constants.getDbUsername(), Constants.getDbPassword(), INSERT, strInsert );
+        insertQuery.executeQueryThrows();
 
     }
 
@@ -150,7 +151,7 @@ public class Student {
 
         String query = "Select FirstName, LastName, StudentID From Students";
 
-        SelectStudentGrades selectStudentGrades = new SelectStudentGrades("GradeBook_Application", "root", "Winter I_S Coming!");
+        SelectStudentGrades selectStudentGrades = new SelectStudentGrades(Constants.getDbName(), Constants.getDbUsername(), Constants.getDbPassword());
         return selectStudentGrades.returnArrayOfDataFromQuery(query);
 
     }
@@ -161,7 +162,7 @@ public class Student {
                 " WHERE courseID = " + course.getCourseID() +
                 " AND studentID = " + student.getStudentID();
 
-        SelectStudentGrades selectStudentGrades = new SelectStudentGrades("GradeBook_Application", "root", "Winter I_S Coming!");
+        SelectStudentGrades selectStudentGrades = new SelectStudentGrades(Constants.getDbName(), Constants.getDbUsername(), Constants.getDbPassword());
         return selectStudentGrades.returnArrayOfDataFromQuery(query);
 
     }
@@ -173,7 +174,7 @@ public class Student {
      * makes us of method insertStudent
      * @param student accepts the parameter of 1 student ArrayList
      */
-    public void insertMultipleStudents(ArrayList<Student> student){
+    public void insertMultipleStudents(ArrayList<Student> student) throws SQLException{
         for (Student currentStudent: student) {
             currentStudent.insertStudent();
         }
@@ -183,20 +184,20 @@ public class Student {
      * public method to delete all gradeitems from a course for a student
      * @param course the course object
      */
-    public void deleteAllGradeItemsInCourse(Course course){
+    public void deleteAllGradeItemsInCourse(Course course) throws SQLException{
 
         String strDelete = "from GradeItems WHERE studentID = " + this.studentID + " AND courseID = " + course.getCourseID();
-        Query deleteQuery = new Query("GradeBook_Application", "root", "Winter I_S Coming!", DELETE, strDelete );
-        deleteQuery.executeQuery();
+        Query deleteQuery = new Query(Constants.getDbName(), Constants.getDbUsername(), Constants.getDbPassword(), DELETE, strDelete );
+        deleteQuery.executeQueryThrows();
     }
 
     /**
      * public static method to delete all grade items for a student
      */
-    public static void deleteAllGradeItemsForStudent(int studentID){
+    public static void deleteAllGradeItemsForStudent(int studentID) throws SQLException{
         String strDelete = "from GradeItems WHERE studentID = " + studentID;
-        Query deleteQuery = new Query("GradeBook_Application", "root", "Winter I_S Coming!", DELETE, strDelete );
-        deleteQuery.executeQuery();
+        Query deleteQuery = new Query(Constants.getDbName(), Constants.getDbUsername(), Constants.getDbPassword(), DELETE, strDelete );
+        deleteQuery.executeQueryThrows();
     }
 
     /**
@@ -205,11 +206,11 @@ public class Student {
      * @param studentID the id of the student to delete all the grade items
      * @param courseID the course to delete the student grade items
      */
-    public static void deleteAllGradeItemsInCourse(int studentID, int courseID){
+    public static void deleteAllGradeItemsInCourse(int studentID, int courseID) throws SQLException{
 
         String strDelete = "from GradeItems WHERE studentID =" + studentID + " AND courseID = " + courseID;
-        Query deleteQuery = new Query("GradeBook_Application", "root", "Winter I_S Coming!", DELETE, strDelete );
-        deleteQuery.executeQuery();
+        Query deleteQuery = new Query(Constants.getDbName(), Constants.getDbUsername(), Constants.getDbPassword(), DELETE, strDelete );
+        deleteQuery.executeQueryThrows();
     }
 
     /**
@@ -219,17 +220,17 @@ public class Student {
      * @param courseID the id of the course
      * @param nameOfGradeItem the name of the gradeitem
      */
-    public static void deleteSingleGradeItem(int studentID, int courseID, String nameOfGradeItem, int totalCorrect, int totalPossible){
+    public static void deleteSingleGradeItem(int studentID, int courseID, String nameOfGradeItem, int totalCorrect, int totalPossible) throws SQLException{
         //build the query
         String strDelete = " FROM GradeItems WHERE TotalCorrect = " + totalCorrect + " AND TotalPossible = " + totalPossible +
                 " AND NAME LIKE %'" + nameOfGradeItem + "'% AND CourseID = " + courseID +
                 " AND StudentID = " + studentID;
 
         //create the query object
-        Query deleteQuery = new Query("GradeBook_Application", "root", "Winter I_S Coming!", DELETE, strDelete);
+        Query deleteQuery = new Query(Constants.getDbName(), Constants.getDbUsername(), Constants.getDbPassword(), DELETE, strDelete);
 
         //execute the query
-        deleteQuery.executeQuery();
+        deleteQuery.executeQueryThrows();
     }
 
     /**
@@ -238,33 +239,33 @@ public class Student {
      * @param course the course object
      * @param gradeItem the gradeitem object to be deleted
      */
-    public void deleteSingleGradeItem(Course course, GradeItem gradeItem){
+    public void deleteSingleGradeItem(Course course, GradeItem gradeItem) throws SQLException{
         //build the query
         String strDelete = "from GradeItems WHERE studentID =" + this.studentID + " AND courseID = " + course.getCourseID() + " AND GradeName = " + gradeItem.getGradeName();
 
         //create the query object
-        Query deleteQuery = new Query("GradeBook_Application", "root", "Winter I_S Coming!", DELETE, strDelete );
+        Query deleteQuery = new Query(Constants.getDbName(), Constants.getDbUsername(), Constants.getDbPassword(), DELETE, strDelete );
 
         //execute the query
-        deleteQuery.executeQuery();
+        deleteQuery.executeQueryThrows();
     }
 
     /**
      * public static method to delete a student from the Database
      * method also deletes all gradeitems for the student
      */
-    public static void deleteStudent(int studentID){
+    public static void deleteStudent(int studentID) throws SQLException{
         //first delete all grade items for the student
-        deleteAllGradeItemsForStudent(studentID);
+//        deleteAllGradeItemsForStudent(studentID);
 
         //build the query
         String strDelete = "from Students WHERE studentID = " + studentID;
 
         //create the query object
-        Query deleteQuery = new Query("GradeBook_Application", "root", "Winter I_S Coming!", DELETE, strDelete );
+        Query deleteQuery = new Query(Constants.getDbName(), Constants.getDbUsername(), Constants.getDbPassword(), DELETE, strDelete );
 
         //execute the query
-        deleteQuery.executeQuery();
+        deleteQuery.executeQueryThrows();
     }
 
     /**

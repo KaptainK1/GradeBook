@@ -7,6 +7,7 @@ import src.com.dylanhoffman.compsci316.Constants;
 import src.com.dylanhoffman.compsci316.logging.Log;
 import src.com.dylanhoffman.compsci316.model.Student;
 
+import java.sql.SQLException;
 import java.sql.SQLIntegrityConstraintViolationException;
 import java.util.InputMismatchException;
 
@@ -37,10 +38,14 @@ public class StudentsController extends MainController{
             Log.writeToLog(Constants.getLogPath(),e.getMessage());
             clearFieldsOnDataException();
             super.displayAlertBox("Error with Student Data!", e.getMessage());
-        } catch (SQLIntegrityConstraintViolationException e){
-            Log.writeToLog(Constants.getLogPath(),e.getMessage());
+        } catch (SQLIntegrityConstraintViolationException e) {
+            Log.writeToLog(Constants.getLogPath(), e.getMessage());
             clearFieldsOnDataException();
             super.displayAlertBox("Cannot Add Student with same ID", "Student ID entered matches another id already entered.");
+        }catch (SQLException e){
+                Log.writeToLog(Constants.getLogPath(),e.getMessage());
+                clearFieldsOnDataException();
+                super.displayAlertBox("Error with Database", "There was an error with the database, please try again");
         }catch (Exception e){
             Log.writeToLog(Constants.getLogPath(),e.getMessage());
             clearFieldsOnDataException();
@@ -71,23 +76,33 @@ public class StudentsController extends MainController{
     @FXML
     void deleteStudent(ActionEvent event) {
 
-        try {
-            Student.deleteStudent(Integer.parseInt(studentStudentID.getText().trim()));
-            super.displayAlertBox("Student Deleted! ", studentFirstName.getText().trim() + " " + studentLastName.getText().trim());
-        } catch (InputMismatchException e){
-            Log.writeToLog(Constants.getLogPath(),e.getMessage());
-            clearFieldsOnDataException();
-            super.displayAlertBox("Error with Student Data!", "Error with data entered for the student. Please check your input and try again.");
-        } catch (IllegalArgumentException e){
-            Log.writeToLog(Constants.getLogPath(),e.getMessage());
-            clearFieldsOnDataException();
-            super.displayAlertBox("Error with Student Data!", e.getMessage());
-        } catch (Exception e){
-            Log.writeToLog(Constants.getLogPath(),e.getMessage());
-            clearFieldsOnDataException();
-            super.displayAlertBox("Generic Error with Adding Student", "Please Check the data entered for the student and try again.");
-        }
+        ConfirmBox confirmBox = new ConfirmBox();
+        confirmBox.displayConfirmBox("Warning! Data loss possible!", "Are you sure you want to delete this Student?",
+                Constants.getCssPath());
+        if (confirmBox.getIsUserChoice()) {
+            try {
+                Student.deleteStudent(Integer.parseInt(studentStudentID.getText().trim()));
+            } catch (SQLException e) {
+                Log.writeToLog(Constants.getLogPath(), e.getMessage());
+                super.displayAlertBox("Cannot Delete the Course", e.getMessage());
 
+            } catch (InputMismatchException e) {
+                Log.writeToLog(Constants.getLogPath(), e.getMessage());
+                clearFieldsOnDataException();
+                super.displayAlertBox("Error with Student Data!", "Error with data entered for the student. Please check your input and try again.");
+            } catch (IllegalArgumentException e) {
+                Log.writeToLog(Constants.getLogPath(), e.getMessage());
+                clearFieldsOnDataException();
+                super.displayAlertBox("Error with Student Data!", e.getMessage());
+            } catch (Exception e) {
+                Log.writeToLog(Constants.getLogPath(), e.getMessage());
+                clearFieldsOnDataException();
+                super.displayAlertBox("Generic Error with Adding Student", "Please Check the data entered for the student and try again.");
+            }
+
+            super.displayAlertBox("Student Deleted! ", studentFirstName.getText().trim() + " " + studentLastName.getText().trim());
+
+        }
     }
 
     /**

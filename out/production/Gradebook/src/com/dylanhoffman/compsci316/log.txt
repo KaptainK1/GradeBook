@@ -1,2 +1,10 @@
 Nov 28, 2018 8:39:59 PM src.com.dylanhoffman.compsci316.logging.Log writeToLog
 WARNING: Test
+Nov 29, 2018 5:45:23 AM src.com.dylanhoffman.compsci316.logging.Log writeToLog
+WARNING: Test
+Nov 29, 2018 10:48:57 AM src.com.dylanhoffman.compsci316.logging.Log writeToLog
+WARNING: For input string: "te"
+Nov 29, 2018 10:49:14 AM src.com.dylanhoffman.compsci316.logging.Log writeToLog
+WARNING: null
+Nov 29, 2018 10:49:18 AM src.com.dylanhoffman.compsci316.logging.Log writeToLog
+WARNING: Duplicate entry '1' for key 'PRIMARY'

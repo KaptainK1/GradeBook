@@ -19,7 +19,7 @@ public class Log {
         Logger logger = Logger.getLogger("MainLog");
 
         try {
-           FileHandler file = new FileHandler(filePath,100000,1,true);
+           FileHandler file = new FileHandler(filePath,1000000,1,true);
             logger.addHandler(file);
             SimpleFormatter formatter = new SimpleFormatter();
             file.setFormatter(formatter);

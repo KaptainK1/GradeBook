@@ -75,6 +75,14 @@ public class CoursesController extends MainController{
             Log.writeToLog(Constants.getLogPath(),e.getMessage());
             clearFieldsOnDataException();
             super.displayAlertBox("Error with Data input", "Please check the entered data and try again");
+        } catch (SQLIntegrityConstraintViolationException e) {
+            Log.writeToLog(Constants.getLogPath(), e.getMessage());
+            clearFieldsOnDataException();
+            super.displayAlertBox("Error with Adding Course", "Cannot add a course with the same ID");
+        } catch (SQLException e){
+            Log.writeToLog(Constants.getLogPath(), e.getMessage());
+            clearFieldsOnDataException();
+            super.displayAlertBox("Error with Adding Course into Database", "Please check your data and try again");
         } catch (Exception e){
             Log.writeToLog(Constants.getLogPath(),e.getMessage());
             clearFieldsOnDataException();
@@ -116,7 +124,13 @@ public class CoursesController extends MainController{
             confirmBox.displayConfirmBox("Warning! Data loss possible!", "Are you sure you want to delete this course? All students and grades will be deleted",
                     Constants.getCssPath() );
             if (confirmBox.getIsUserChoice()){
-                course.deleteCourse();
+                try {
+                    course.deleteCourse();
+                } catch (SQLException e){
+                    Log.writeToLog(Constants.getLogPath(), e.getMessage());
+                    super.displayAlertBox("Cannot Delete the Course", e.getMessage());
+                }
+
             } else{
                 DisplayBox displayBox = new DisplayBox();
                 displayBox.display("Course Not Deleted!", "You opted to not delete the course", Constants.getCssPath());
@@ -203,6 +217,15 @@ public class CoursesController extends MainController{
                     Log.writeToLog(Constants.getLogPath(),e.getMessage());
                     super.displayAlertBox("Error with Imported Data",
                             e.getMessage() + "\n Is not valid input. Aborting Row import and continuing");
+
+                } catch (SQLIntegrityConstraintViolationException e) {
+                    Log.writeToLog(Constants.getLogPath(),e.getMessage());
+                    super.displayAlertBox("Error with the Data", "Cannot enter duplicate ID for Course!");
+                    e.printStackTrace();
+                }catch (SQLException e) {
+                    Log.writeToLog(Constants.getLogPath(),e.getMessage());
+                    super.displayAlertBox("Error with the Database", e.getMessage());
+                    e.printStackTrace();
                 }
             }
 
