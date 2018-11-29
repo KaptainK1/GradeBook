@@ -1,5 +1,6 @@
 package src.com.dylanhoffman.compsci316.model;
 
+import src.com.dylanhoffman.compsci316.Constants;
 import src.com.dylanhoffman.compsci316.logging.Log;
 import src.com.dylanhoffman.compsci316.utility.Query;
 import src.com.dylanhoffman.compsci316.utility.SelectStudentGrades;
@@ -23,7 +24,6 @@ public class Student {
     private final String firstName;
     private final String lastName;
     private final int studentID;
-
     /**
      * Constructor that accepts 3 parameters
      * @param firstName String firstName to hold the Student's first name
@@ -33,16 +33,16 @@ public class Student {
     public Student(String firstName, String lastName, int studentID){
 
         if (firstName.equals("")){
-            Log.writeToLog("/Users/dhoffman/Documents/Gradebook/log.txt", "First name cannot be blank");
+            Log.writeToLog(Constants.getLogPath(), "First name cannot be blank");
             throw new IllegalArgumentException("First name cannot be blank");
         }
         if (lastName.equals("")) {
-            Log.writeToLog("/Users/dhoffman/Documents/Gradebook/log.txt", "Last name cannot be blank");
+            Log.writeToLog(Constants.getLogPath(), "Last name cannot be blank");
             throw new IllegalArgumentException("Last name cannot be blank");
         }
         //check to see if the student id is 8 digits
         if (!isValidStudentID(studentID,8)) {
-            Log.writeToLog("/Users/dhoffman/Documents/Gradebook/log.txt", "Invalid student number");
+            Log.writeToLog(Constants.getLogPath(), "Invalid student number");
             throw new IllegalArgumentException("Invalid student number");
         }
 
@@ -73,14 +73,6 @@ public class Student {
         }
         return isValid;
     }
-
-//    /**
-//     * public method to add a gradeitem to the private arraylist
-//     * @param gradeItem accepts 1 parameter of type GradeItem
-//     */
-//    public void addGradeItem(GradeItem gradeItem){
-//        getGradeItems().add(gradeItem);
-//    }
 
     /**
      * method for inserting multiple grade items for a single course into the Database
@@ -309,19 +301,5 @@ public class Student {
     public int getStudentID() {
         return studentID;
     }
-
-    /**
-     * public setter method for the student id
-     * method checkes to see if the id is a valid length first
-     * @param studentID int to set the student id
-     */
-//    public void setStudentID(int studentID) {
-//        //check to see if the student id is 8 digits
-//        if (!isValidStudentID(studentID,8)) {
-//            Log.writeToLog("/Users/dhoffman/Documents/Gradebook/log.txt", "Invalid student number");
-//            throw new IllegalArgumentException("Invalid student number");
-//        }
-//        this.studentID = studentID;
-//    }
 
 }

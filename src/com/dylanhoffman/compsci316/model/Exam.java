@@ -1,5 +1,6 @@
 package src.com.dylanhoffman.compsci316.model;
 
+import src.com.dylanhoffman.compsci316.Constants;
 import src.com.dylanhoffman.compsci316.logging.Log;
 
 /**
@@ -19,7 +20,7 @@ public class Exam extends GradeItem {
         super(name, totalCorrect, totalPossible);
 
         if (totalPossible > 201 || totalPossible < 51) {
-            Log.writeToLog("/Users/dhoffman/Documents/Gradebook/log.txt","An Exam must be between 50 and 200 points");
+            Log.writeToLog(Constants.getLogPath(),"An Exam must be between 50 and 200 points");
             throw new IllegalArgumentException("An Exam must be between 50 and 200 points");
         }
     }
@@ -33,4 +34,5 @@ public class Exam extends GradeItem {
     public String toString(){
         return getClass().toString() + " " + super.toString();
     }
+
 }

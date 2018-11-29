@@ -8,6 +8,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
+import src.com.dylanhoffman.compsci316.Constants;
 import src.com.dylanhoffman.compsci316.logging.Log;
 import src.com.dylanhoffman.compsci316.model.Course;
 import src.com.dylanhoffman.compsci316.model.GradeItem;
@@ -19,7 +20,6 @@ import java.util.ArrayList;
  * Class to control the Grade Item UI
  */
 public class GradeItemsController extends MainController{
-
 
     //variables to interact with javaFX elements
     @FXML
@@ -66,6 +66,7 @@ public class GradeItemsController extends MainController{
                         try {
                             initializeStudentList(newValue);
                         } catch (NullPointerException e){
+                            Log.writeToLog(Constants.getLogPath(),e.getMessage());
                             displayAlertBox("A course was unselected!", "The Student List is now clear");
                             allStudents.clear();
                             students.removeAll();
@@ -99,6 +100,7 @@ public class GradeItemsController extends MainController{
 
 
         } catch (NumberFormatException e){
+            Log.writeToLog(Constants.getLogPath(),e.getMessage());
             clearFieldsOnDataException();
         }
 
@@ -110,10 +112,13 @@ public class GradeItemsController extends MainController{
             GradeItem gradeItem = new GradeItem(name,pointsCorrect,pointsPossible);
             Student.insertGradeItem(studentsListView.getSelectionModel().getSelectedItem(),gradeItem,courseListView.getSelectionModel().getSelectedItem());
         } catch (NullPointerException e) {
+            Log.writeToLog(Constants.getLogPath(),e.getMessage());
             super.displayAlertBox("Error - Student or Course Not Selected", "A Course and a Student must be selected!!");
         } catch (IllegalArgumentException e){
+            Log.writeToLog(Constants.getLogPath(),e.getMessage());
             super.displayAlertBox("Error with GradeItem Data", e.getMessage());
         } catch (Exception e){
+            Log.writeToLog(Constants.getLogPath(),e.getMessage());
             super.displayAlertBox("General Error", "An error has occurred, please check the data and try again!");
         }
     }
@@ -138,8 +143,9 @@ public class GradeItemsController extends MainController{
             //create a display box object to be shown to the user
             DisplayBox displayBox = new DisplayBox();
             //run the display boxes display grid pane method which will display a grid pane using a 2 dimension array
-            displayBox.displayGridPane( arrayGradeItems, "GradeItems For " + studentsListView.getSelectionModel().getSelectedItem(),"src/com/dylanhoffman/compsci316/UI/stylesheet.css");
+            displayBox.displayGridPane( arrayGradeItems, "GradeItems For " + studentsListView.getSelectionModel().getSelectedItem(),Constants.getCssPath());
         } catch (NullPointerException e){
+            Log.writeToLog(Constants.getLogPath(),e.getMessage());
             super.displayAlertBox("Error While Searching", "A Student and a Course must be selected!");
         }
 
@@ -171,9 +177,11 @@ public class GradeItemsController extends MainController{
             );
 
         } catch (NumberFormatException e) {
+            Log.writeToLog(Constants.getLogPath(),e.getMessage());
             clearFieldsOnDataException();
             super.displayAlertBox("Error with Data", "All fields have been cleared, please try again");
         } catch (NullPointerException e){
+            Log.writeToLog(Constants.getLogPath(),e.getMessage());
             super.displayAlertBox("Error While Searching", "A Student and a Course must be selected!");
         }
     }
@@ -250,13 +258,14 @@ public class GradeItemsController extends MainController{
             courseListView.getSelectionModel().getSelectedItem().setStudents(students);
             displayBox.display("Course Grades for Course" + courseListView.getSelectionModel().getSelectedItem(),
                     courseListView.getSelectionModel().getSelectedItem().calculateAllStudentsInCourse(),
-                    "src/com/dylanhoffman/compsci316/UI/stylesheet.css");
+                    Constants.getCssPath());
         } catch (NullPointerException e){
+            Log.writeToLog(Constants.getLogPath(),e.getMessage());
             super.displayAlertBox("Error While Calculating", "A Course must be selected!");
         }
 
-
     }
+
 
 }
 

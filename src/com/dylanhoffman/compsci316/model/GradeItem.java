@@ -1,5 +1,6 @@
 package src.com.dylanhoffman.compsci316.model;
 
+import src.com.dylanhoffman.compsci316.Constants;
 import src.com.dylanhoffman.compsci316.logging.Log;
 
 /**
@@ -23,12 +24,12 @@ public class GradeItem {
     public GradeItem(String name, int totalCorrect, int totalPossible){
         //check to see if the name is null
         if (name.equals("")) {
-            Log.writeToLog("/Users/dhoffman/Documents/Gradebook/log.txt", "Please enter a grade name");
+            Log.writeToLog(Constants.getLogPath(), "Please enter a grade name");
             throw new IllegalArgumentException("Please enter a grade name");
         }
         //check to see if the total correct is a negative number or greater than the total possible
         if (totalCorrect < 0 || totalCorrect > totalPossible) {
-            Log.writeToLog("/Users/dhoffman/Documents/Gradebook/log.txt", "the total correct amount is less than 0 or greater than the total possible");
+            Log.writeToLog(Constants.getLogPath(), "the total correct amount is less than 0 or greater than the total possible");
             throw new IllegalArgumentException("the total correct amount is less than 0 or greater than the total possible");
         }
 

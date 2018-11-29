@@ -1,5 +1,6 @@
 package src.com.dylanhoffman.compsci316.model;
 
+import src.com.dylanhoffman.compsci316.Constants;
 import src.com.dylanhoffman.compsci316.logging.Log;
 
 /**
@@ -18,7 +19,7 @@ public class Quiz extends GradeItem {
     public Quiz(String name, int totalCorrect, int totalPossible){
         super(name, totalCorrect, totalPossible);
             if (totalPossible > 21 || totalPossible < 9) {
-                Log.writeToLog("/Users/dhoffman/Documents/Gradebook/log.txt","A Quiz must be less than 20 total possible points");
+                Log.writeToLog(Constants.getLogPath(),"A Quiz must be less than 20 total possible points");
                 throw new IllegalArgumentException("A Quiz must be less than 20 total possible points");
             }
 
@@ -33,4 +34,5 @@ public class Quiz extends GradeItem {
     public String toString(){
         return getClass().toString() + " " + super.toString();
     }
+
 }

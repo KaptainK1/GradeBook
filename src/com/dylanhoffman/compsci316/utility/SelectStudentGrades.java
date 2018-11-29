@@ -1,4 +1,5 @@
 package src.com.dylanhoffman.compsci316.utility;
+import src.com.dylanhoffman.compsci316.Constants;
 import src.com.dylanhoffman.compsci316.logging.Log;
 import src.com.dylanhoffman.compsci316.model.Course;
 import src.com.dylanhoffman.compsci316.model.GradeItem;
@@ -20,7 +21,6 @@ public class SelectStudentGrades {
     private String dbName;
     private String dbUser;
     private String dbPass;
-
     //overloaded method that does not include the url connection object passed as a parm, so the default is localhost
 
     /**
@@ -75,7 +75,7 @@ public class SelectStudentGrades {
             System.out.println("Total number of records = " + rowCount);
         }
         catch (SQLException ex){
-            Log.writeToLog("/Users/dhoffman/Documents/Gradebook/log.txt", ex.getMessage());
+            Log.writeToLog(Constants.getLogPath(), ex.getMessage());
             ex.printStackTrace();
         }
         System.out.println(total);
@@ -130,7 +130,7 @@ public class SelectStudentGrades {
             System.out.println("Total number of records = " + rowCount);
         }
         catch (SQLException ex){
-            Log.writeToLog("/Users/dhoffman/Documents/Gradebook/log.txt", ex.getMessage());
+            Log.writeToLog(Constants.getLogPath(), ex.getMessage());
             ex.printStackTrace();
         }
 
@@ -178,127 +178,12 @@ public class SelectStudentGrades {
             System.out.println("Total number of records = " + rowCount);
         }
         catch (SQLException ex){
-            Log.writeToLog("/Users/dhoffman/Documents/Gradebook/log.txt", ex.getMessage());
+            Log.writeToLog(Constants.getLogPath(), ex.getMessage());
             ex.printStackTrace();
         }
 
         return allCourses;
     }
-
-//    public ArrayList<String> executeGradeItemQuery(Student student, Course course){
-////        String query = (new StringBuilder().append(getQueryType().toString()).append(" ").append(getStrSelect())).toString();
-////        String query = "SELECT * from Students where CourseID = " + course.getCourseID();
-//
-//        String query = "Select TotalCorrect, TotalPossible, GradeLetter, Name FROM GradeItems" +
-//                " WHERE courseID = " + course.getCourseID() +
-//                " AND studentID = " + student.getStudentID();
-//
-//        int rowCount = 0;
-//        ArrayList<String> allGradeItems = new ArrayList<>();
-//        allGradeItems.add(0,student.getFirstName() + " " + student.getLastName() + " " + course.getCourseName());
-//        int totalCorrect;
-//        int totalPossible;
-//        String name;
-//        String gradeLetter;
-//        String gradeItem;
-//
-//        try (
-//                //create the connection object, then create the statement object
-//                Connection connection = DriverManager.getConnection( getUrl() + getDbName() + "?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true", getDbUser(), getDbPass());
-//                Statement statement = connection.prepareStatement(query)
-//        ) {
-//
-//            System.out.println("SQL Select Statement is " + query);
-//            ResultSet result = statement.executeQuery(query);
-//            ResultSetMetaData resultDataSet = result.getMetaData();
-//            int columns = resultDataSet.getColumnCount();
-//
-//            System.out.println("The records selected are:");
-//
-//            while(result.next()) {   // Move the cursor to the next row, return false if no more rows
-//                //print out each cell value for all columns and rows
-//                totalCorrect=result.getInt("TotalCorrect");
-//                totalPossible=result.getInt("TotalPossible");
-//                name=result.getString("Name");
-//                gradeLetter=result.getString("GradeLetter");
-//                gradeItem = name + " " + String.valueOf(totalCorrect) + " " + String.valueOf(totalPossible) + " " + gradeLetter;
-//                allGradeItems.add(gradeItem);
-//            }
-//            ++rowCount;
-//
-//            System.out.println("Total number of records = " + rowCount);
-//        }
-//        catch (SQLException ex){
-//            Log.writeToLog("/Users/dhoffman/Documents/Gradebook/log.txt", ex.getMessage());
-//            ex.printStackTrace();
-//        }
-//
-//        return allGradeItems;
-//    }
-
-//
-//    public String[][] returnArrayOfDataFromQuery(Student student, Course course){
-//
-//        String query = "Select TotalCorrect, TotalPossible, GradeLetter, Name FROM GradeItems" +
-//                " WHERE courseID = " + course.getCourseID() +
-//                " AND studentID = " + student.getStudentID();
-//
-//        int rowCount = 0;
-//        int totalCorrect;
-//        int totalPossible;
-//        String name;
-//        String gradeLetter;
-//        String array[][] = new String[0][0];
-//
-//        try (
-//                //create the connection object, then create the statement object
-//                Connection connection = DriverManager.getConnection( getUrl() + getDbName() + "?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true", getDbUser(), getDbPass());
-//                Statement statement = connection.prepareStatement(query)
-//        ) {
-//
-//            System.out.println("SQL Select Statement is " + query);
-//            ResultSet result = statement.executeQuery(query);
-//            ResultSetMetaData resultDataSet = result.getMetaData();
-//
-//            int columns = resultDataSet.getColumnCount() + 1;
-//            result.last();
-//            int rows = result.getRow() + 1;
-//            result.beforeFirst();
-//
-//            array = new String[columns][rows];
-//            array[0][0] = "Assign Name";
-//            array[1][0] = "Total Points Correct";
-//            array[2][0] = "Points Total on Assignment";
-//            array[3][0] = "Grade Letter";
-//
-//            System.out.println("The records selected are:");
-//            int rowCounter = 1;
-//
-//            while(result.next()) {   // Move the cursor to the next row, return false if no more rows
-//                //print out each cell value for all columns and rows
-//                totalCorrect=result.getInt("TotalCorrect");
-//                totalPossible=result.getInt("TotalPossible");
-//                name=result.getString("Name");
-//                gradeLetter=result.getString("GradeLetter");
-//
-//                array[0][rowCounter] = name;
-//                array[1][rowCounter] = String.valueOf(totalCorrect);
-//                array[2][rowCounter] = String.valueOf(totalPossible);
-//                array[3][rowCounter] = gradeLetter;
-//                rowCounter++;
-//            }
-//            ++rowCount;
-//
-//            System.out.println("Total number of records = " + rowCount);
-//        }
-//        catch (SQLException ex){
-//            Log.writeToLog("/Users/dhoffman/Documents/Gradebook/log.txt", ex.getMessage());
-//            ex.printStackTrace();
-//        }
-//
-//        return array;
-//    }
-
 
     /**
      * Public method for executing a query and building a grid of the data in columns and rows
@@ -358,7 +243,7 @@ public class SelectStudentGrades {
             System.out.println("Total number of records = " + rowCount);
         }
         catch (SQLException ex){
-            Log.writeToLog("/Users/dhoffman/Documents/Gradebook/log.txt", ex.getMessage());
+            Log.writeToLog(Constants.getLogPath(), ex.getMessage());
             ex.printStackTrace();
         }
 
@@ -428,4 +313,5 @@ public class SelectStudentGrades {
     public void setDbPass(String dbPass) {
         this.dbPass = dbPass;
     }
+
 }

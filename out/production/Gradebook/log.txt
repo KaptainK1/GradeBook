@@ -1,2 +1,16 @@
-Nov 26, 2018 9:57:55 PM src.com.dylanhoffman.compsci316.logging.Log writeToLog
-WARNING: Please enter a grade name
+Nov 28, 2018 12:33:36 PM src.com.dylanhoffman.compsci316.logging.Log writeToLog
+WARNING: Duplicate entry '100007' for key 'PRIMARY'
+Nov 28, 2018 12:38:14 PM src.com.dylanhoffman.compsci316.logging.Log writeToLog
+WARNING: Duplicate entry '100001' for key 'PRIMARY'
+Nov 28, 2018 12:38:14 PM src.com.dylanhoffman.compsci316.logging.Log writeToLog
+WARNING: Duplicate entry '100002' for key 'PRIMARY'
+Nov 28, 2018 12:38:14 PM src.com.dylanhoffman.compsci316.logging.Log writeToLog
+WARNING: Duplicate entry '100003' for key 'PRIMARY'
+Nov 28, 2018 12:38:14 PM src.com.dylanhoffman.compsci316.logging.Log writeToLog
+WARNING: Duplicate entry '100004' for key 'PRIMARY'
+Nov 28, 2018 12:38:14 PM src.com.dylanhoffman.compsci316.logging.Log writeToLog
+WARNING: Duplicate entry '100005' for key 'PRIMARY'
+Nov 28, 2018 12:38:14 PM src.com.dylanhoffman.compsci316.logging.Log writeToLog
+WARNING: Duplicate entry '100006' for key 'PRIMARY'
+Nov 28, 2018 12:38:14 PM src.com.dylanhoffman.compsci316.logging.Log writeToLog
+WARNING: Duplicate entry '100007' for key 'PRIMARY'

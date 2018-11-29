@@ -5,9 +5,9 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="400.0" styleClass="anchor-pane" stylesheets="@stylesheet.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="src.com.dylanhoffman.compsci316.UI.CoursesController">
+<AnchorPane fx:id="courseContainer" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="400.0" styleClass="anchor-pane" stylesheets="@stylesheet.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="src.com.dylanhoffman.compsci316.UI.CoursesController">
    <children>
-      <GridPane layoutX="43.0" layoutY="81.0" prefHeight="400.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
+      <GridPane layoutX="43.0" layoutY="81.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
         <columnConstraints>
           <ColumnConstraints hgrow="SOMETIMES" maxWidth="150.0" minWidth="10.0" prefWidth="150.0" />
           <ColumnConstraints hgrow="SOMETIMES" maxWidth="237.0" minWidth="10.0" prefWidth="237.0" />
@@ -25,8 +25,8 @@
             <Label alignment="CENTER_RIGHT" maxWidth="1.7976931348623157E308" text="CourseID" GridPane.rowIndex="1" />
             <Label alignment="CENTER_RIGHT" maxWidth="1.7976931348623157E308" text="Course Number" GridPane.rowIndex="2" />
             <Label alignment="CENTER_RIGHT" maxWidth="1.7976931348623157E308" text="Course Name" GridPane.rowIndex="3" />
-            <ListView fx:id="listViewGradeModels" prefHeight="200.0" prefWidth="200.0" GridPane.columnSpan="2" GridPane.rowIndex="4" />
-            <HBox alignment="CENTER" prefWidth="400.0" GridPane.columnSpan="2" GridPane.rowIndex="5">
+            <ListView fx:id="listViewGradeModels" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" GridPane.columnSpan="2" GridPane.rowIndex="4" />
+            <HBox alignment="TOP_CENTER" prefWidth="400.0" GridPane.columnSpan="2" GridPane.rowIndex="5">
                <children>
                   <Button mnemonicParsing="false" onAction="#insertCourse" text="Insert" />
                   <Button mnemonicParsing="false" onAction="#searchCourses" text="Search" />
@@ -48,6 +48,11 @@
                   <Insets left="10.0" right="10.0" />
                </GridPane.margin>
             </TextField>
+            <Button alignment="CENTER" contentDisplay="CENTER" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#importObjects" text="Import" underline="true" GridPane.columnIndex="1" GridPane.rowIndex="5" GridPane.valignment="BOTTOM">
+               <GridPane.margin>
+                  <Insets left="125.0" />
+               </GridPane.margin>
+            </Button>
          </children>
       </GridPane>
    </children>

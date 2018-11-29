@@ -1,11 +1,13 @@
 package src.com.dylanhoffman.compsci316.model;
 
+import src.com.dylanhoffman.compsci316.Constants;
 import src.com.dylanhoffman.compsci316.logging.Log;
 
 /**
  * Assignment Class that extends GradeItem class
  */
 public class Assignment extends GradeItem {
+
 
     /**
      * constructor for the Assignment class
@@ -19,7 +21,7 @@ public class Assignment extends GradeItem {
         super(name, totalCorrect, totalPossible );
 
         if (totalPossible > 101 || totalPossible < 9) {
-            Log.writeToLog("/Users/dhoffman/Documents/Gradebook/log.txt","An Assignment cannot be greater than 50 points or Less than 10 points");
+            Log.writeToLog(Constants.getLogPath(),"An Assignment cannot be greater than 50 points or Less than 10 points");
             throw new IllegalArgumentException("An Assignment cannot be greater than 50 points or Less than 10 points");
         }
     }

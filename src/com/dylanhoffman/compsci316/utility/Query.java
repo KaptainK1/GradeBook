@@ -1,5 +1,6 @@
 package src.com.dylanhoffman.compsci316.utility;
 
+import src.com.dylanhoffman.compsci316.Constants;
 import src.com.dylanhoffman.compsci316.logging.Log;
 
 import java.sql.*;
@@ -82,12 +83,12 @@ public class Query {
             int result = statement.executeUpdate(query);
             System.out.println("Total number of records = " + rowCount);
         } catch(SQLIntegrityConstraintViolationException e) {
-            Log.writeToLog("/Users/dhoffman/Documents/Gradebook/log.txt", e.getMessage());
+            Log.writeToLog(Constants.getLogPath(), e.getMessage());
             System.out.println("Duplicate primary key, cannot insert same value twice!");
             e.printStackTrace();
         }
         catch (SQLException ex){
-            Log.writeToLog("/Users/dhoffman/Documents/Gradebook/log.txt", ex.getMessage());
+            Log.writeToLog(Constants.getLogPath(), ex.getMessage());
             ex.printStackTrace();
         }
     }
@@ -187,4 +188,5 @@ public class Query {
     public void setDbPass(String dbPass) {
         this.dbPass = dbPass;
     }
+
 }
