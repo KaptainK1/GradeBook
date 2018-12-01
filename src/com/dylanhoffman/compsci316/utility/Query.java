@@ -106,6 +106,9 @@ public class Query {
             System.out.println("SQL Statement is " + query);
             int result = statement.executeUpdate(query);
             System.out.println("Total number of records = " + rowCount);
+
+            statement.close();
+            connection.close();
     }
 
     /**

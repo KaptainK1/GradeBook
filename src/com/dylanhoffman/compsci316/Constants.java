@@ -10,6 +10,7 @@ public final class Constants {
     private static final String DB_USERNAME = "root";
     private static final String DB_PASSWORD = "Winter I_S Coming!";
     private static final String DB_NAME = "GradeBook_Application";
+    private static final String DELIMITER = ";";
 
     public static String getLogPath(){
         return LOG_PATH;
@@ -29,5 +30,9 @@ public final class Constants {
 
     public static String getDbName() {
         return DB_NAME;
+    }
+
+    public static String getDelimiter(){
+        return DELIMITER;
     }
 }

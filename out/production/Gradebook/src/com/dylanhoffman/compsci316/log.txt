@@ -8,3 +8,7 @@ Nov 29, 2018 10:49:14 AM src.com.dylanhoffman.compsci316.logging.Log writeToLog
 WARNING: null
 Nov 29, 2018 10:49:18 AM src.com.dylanhoffman.compsci316.logging.Log writeToLog
 WARNING: Duplicate entry '1' for key 'PRIMARY'
+Nov 29, 2018 10:52:16 AM src.com.dylanhoffman.compsci316.logging.Log writeToLog
+WARNING: Duplicate entry '1' for key 'PRIMARY'
+Nov 29, 2018 10:52:30 AM src.com.dylanhoffman.compsci316.logging.Log writeToLog
+WARNING: Duplicate entry '12345678' for key 'PRIMARY'

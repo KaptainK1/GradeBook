@@ -5,15 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ced6009e-22fa-4905-8481-81658185e13a" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/log.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Gradebook/log.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Gradebook/src/com/dylanhoffman/compsci316/logging/Log.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Gradebook/src/com/dylanhoffman/compsci316/logging/Log.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Gradebook/src/com/dylanhoffman/compsci316/log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Gradebook/src/com/dylanhoffman/compsci316/log.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Gradebook/src/com/dylanhoffman/compsci316/utility/Query.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Gradebook/src/com/dylanhoffman/compsci316/utility/Query.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/dylanhoffman/compsci316/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/dylanhoffman/compsci316/Constants.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/dylanhoffman/compsci316/UI/CoursesController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/dylanhoffman/compsci316/UI/CoursesController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/dylanhoffman/compsci316/log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/dylanhoffman/compsci316/log.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/dylanhoffman/compsci316/logging/Log.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/dylanhoffman/compsci316/logging/Log.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/dylanhoffman/compsci316/model/Course.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/dylanhoffman/compsci316/model/Course.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/dylanhoffman/compsci316/model/Student.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/dylanhoffman/compsci316/model/Student.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/dylanhoffman/compsci316/UI/Students.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/dylanhoffman/compsci316/UI/Students.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/dylanhoffman/compsci316/UI/StudentsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/dylanhoffman/compsci316/UI/StudentsController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/dylanhoffman/compsci316/utility/Query.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/dylanhoffman/compsci316/utility/Query.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -32,8 +29,8 @@
     <session id="117130816">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="45" />
-          <entry key="project.open.time.1" value="8" />
+          <entry key="project.closed" value="46" />
+          <entry key="project.open.time.1" value="9" />
           <entry key="project.open.time.10" value="10" />
           <entry key="project.open.time.12" value="3" />
           <entry key="project.open.time.13" value="1" />
@@ -44,7 +41,7 @@
           <entry key="project.open.time.7" value="1" />
           <entry key="project.open.time.8" value="4" />
           <entry key="project.open.time.9" value="9" />
-          <entry key="project.opened" value="46" />
+          <entry key="project.opened" value="47" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -65,9 +62,9 @@
           <entry key="CSS" value="3" />
           <entry key="HTML" value="2" />
           <entry key="IDEA_MODULE" value="1" />
-          <entry key="JAVA" value="236" />
-          <entry key="PLAIN_TEXT" value="9" />
-          <entry key="XML" value="21" />
+          <entry key="JAVA" value="242" />
+          <entry key="PLAIN_TEXT" value="10" />
+          <entry key="XML" value="22" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
@@ -82,7 +79,7 @@
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="CSS" value="724" />
-          <entry key="JAVA" value="47151" />
+          <entry key="JAVA" value="48497" />
           <entry key="PLAIN_TEXT" value="31" />
           <entry key="SQL" value="4" />
           <entry key="XML" value="191" />
@@ -95,29 +92,70 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/dylanhoffman/compsci316/Constants.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="480">
-              <caret line="32" column="1" lean-forward="true" selection-start-line="32" selection-start-column="1" selection-end-line="32" selection-end-column="1" />
+            <state relative-caret-position="465">
+              <caret line="35" column="25" selection-start-line="35" selection-start-column="25" selection-end-line="35" selection-end-column="25" />
               <folding>
-                <element signature="e#395#396#0" expanded="true" />
-                <element signature="e#426#427#0" expanded="true" />
-                <element signature="e#466#467#0" expanded="true" />
-                <element signature="e#497#498#0" expanded="true" />
                 <element signature="e#730#731#0" expanded="true" />
                 <element signature="e#764#765#0" expanded="true" />
                 <element signature="e#808#809#0" expanded="true" />
                 <element signature="e#842#843#0" expanded="true" />
                 <element signature="e#882#883#0" expanded="true" />
                 <element signature="e#912#913#0" expanded="true" />
+                <element signature="e#1007#1008#0" expanded="true" />
+                <element signature="e#1038#1039#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/com/dylanhoffman/compsci316/UI/CoursesController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="447">
+              <caret line="176" column="35" selection-start-line="176" selection-start-column="35" selection-end-line="176" selection-end-column="35" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/dylanhoffman/compsci316/UI/StudentsController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="352">
+              <caret line="135" lean-forward="true" selection-start-line="135" selection-end-line="135" />
+              <folding>
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/dylanhoffman/compsci316/UI/CoursesController.java">
+        <entry file="file://$PROJECT_DIR$/src/com/dylanhoffman/compsci316/UI/Students.fxml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1720">
-              <caret line="214" column="17" lean-forward="true" selection-start-line="214" selection-start-column="17" selection-end-line="214" selection-end-column="17" />
+            <state relative-caret-position="-134">
+              <caret line="10" column="95" selection-start-line="10" selection-start-column="95" selection-end-line="10" selection-end-column="95" />
+            </state>
+          </provider>
+          <provider editor-type-id="JavaFX-Scene-Builder" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/dylanhoffman/compsci316/model/Course.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="203">
+              <caret line="173" column="20" selection-start-line="173" selection-start-column="20" selection-end-line="173" selection-end-column="20" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/dylanhoffman/compsci316/log.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="105">
+              <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -125,34 +163,22 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/dylanhoffman/compsci316/utility/Query.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="171">
-              <caret line="71" column="21" selection-start-line="71" selection-start-column="16" selection-end-line="71" selection-end-column="28" />
+            <state relative-caret-position="1740">
+              <caret line="116" column="7" selection-start-line="116" selection-start-column="7" selection-end-line="116" selection-end-column="7" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#3899#3900#0" expanded="true" />
-                <element signature="e#3925#3926#0" expanded="true" />
-                <element signature="e#4056#4057#0" expanded="true" />
-                <element signature="e#4086#4087#0" expanded="true" />
-                <element signature="e#4216#4217#0" expanded="true" />
-                <element signature="e#4245#4246#0" expanded="true" />
-                <element signature="e#4392#4393#0" expanded="true" />
-                <element signature="e#4428#4429#0" expanded="true" />
-                <element signature="e#4559#4560#0" expanded="true" />
-                <element signature="e#4588#4589#0" expanded="true" />
-                <element signature="e#4732#4733#0" expanded="true" />
-                <element signature="e#4768#4769#0" expanded="true" />
-                <element signature="e#4898#4899#0" expanded="true" />
-                <element signature="e#4929#4930#0" expanded="true" />
-                <element signature="e#5079#5080#0" expanded="true" />
-                <element signature="e#5119#5120#0" expanded="true" />
-                <element signature="e#5252#5253#0" expanded="true" />
-                <element signature="e#5284#5285#0" expanded="true" />
-                <element signature="e#5462#5463#0" expanded="true" />
-                <element signature="e#5504#5505#0" expanded="true" />
-                <element signature="e#5632#5633#0" expanded="true" />
-                <element signature="e#5661#5662#0" expanded="true" />
-                <element signature="e#5805#5806#0" expanded="true" />
-                <element signature="e#5841#5842#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/dylanhoffman/compsci316/UI/MainController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="300">
+              <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
+              <folding>
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -161,8 +187,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/dylanhoffman/compsci316/utility/SelectStudentGrades.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1785">
-              <caret line="119" column="47" lean-forward="true" selection-start-line="119" selection-start-column="47" selection-end-line="119" selection-end-column="47" />
+            <state relative-caret-position="210">
+              <caret line="14" column="72" selection-start-line="14" selection-start-column="72" selection-end-line="14" selection-end-column="72" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -170,14 +196,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/com/dylanhoffman/compsci316/model/Course.java">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/dylanhoffman/compsci316/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="220">
-              <caret line="176" column="25" lean-forward="true" selection-start-line="176" selection-start-column="25" selection-end-line="176" selection-end-column="25" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="300">
+              <caret line="20" column="26" selection-start-line="20" selection-start-column="26" selection-end-line="20" selection-end-column="26" />
             </state>
           </provider>
         </entry>
@@ -223,7 +246,6 @@
         <option value="$PROJECT_DIR$/src/com/dylanhoffman/compsci316/model/grading/CollegeGradeModel.java" />
         <option value="$PROJECT_DIR$/src/com/dylanhoffman/compsci316/model/grading/HighSchoolGradeModel.java" />
         <option value="$PROJECT_DIR$/src/com/dylanhoffman/compsci316/model/grading/ElementaryGradeModel.java" />
-        <option value="$PROJECT_DIR$/src/com/dylanhoffman/compsci316/Main.java" />
         <option value="$PROJECT_DIR$/src/com/dylanhoffman/compsci316/UI/GradeItems.fxml" />
         <option value="$PROJECT_DIR$/src/com/dylanhoffman/compsci316/UI/Students.fxml" />
         <option value="$PROJECT_DIR$/src/com/dylanhoffman/compsci316/UI/Gradebook_Main_UI.java" />
@@ -237,16 +259,17 @@
         <option value="$PROJECT_DIR$/src/com/dylanhoffman/compsci316/model/Exam.java" />
         <option value="$PROJECT_DIR$/src/com/dylanhoffman/compsci316/model/GradeItem.java" />
         <option value="$PROJECT_DIR$/src/com/dylanhoffman/compsci316/model/Quiz.java" />
-        <option value="$PROJECT_DIR$/src/com/dylanhoffman/compsci316/utility/SelectStudentGrades.java" />
-        <option value="$PROJECT_DIR$/src/com/dylanhoffman/compsci316/UI/GradeItemsController.java" />
         <option value="$PROJECT_DIR$/src/com/dylanhoffman/compsci316/UI/MainController.java" />
-        <option value="$PROJECT_DIR$/src/com/dylanhoffman/compsci316/UI/StudentsController.java" />
         <option value="$PROJECT_DIR$/src/com/dylanhoffman/compsci316/logging/Log.java" />
-        <option value="$PROJECT_DIR$/src/com/dylanhoffman/compsci316/Constants.java" />
-        <option value="$PROJECT_DIR$/src/com/dylanhoffman/compsci316/model/Student.java" />
-        <option value="$PROJECT_DIR$/src/com/dylanhoffman/compsci316/utility/Query.java" />
-        <option value="$PROJECT_DIR$/src/com/dylanhoffman/compsci316/UI/CoursesController.java" />
+        <option value="$PROJECT_DIR$/src/com/dylanhoffman/compsci316/Main.java" />
+        <option value="$PROJECT_DIR$/src/com/dylanhoffman/compsci316/utility/SelectStudentGrades.java" />
         <option value="$PROJECT_DIR$/src/com/dylanhoffman/compsci316/model/Course.java" />
+        <option value="$PROJECT_DIR$/src/com/dylanhoffman/compsci316/model/Student.java" />
+        <option value="$PROJECT_DIR$/src/com/dylanhoffman/compsci316/UI/GradeItemsController.java" />
+        <option value="$PROJECT_DIR$/src/com/dylanhoffman/compsci316/utility/Query.java" />
+        <option value="$PROJECT_DIR$/src/com/dylanhoffman/compsci316/Constants.java" />
+        <option value="$PROJECT_DIR$/src/com/dylanhoffman/compsci316/UI/StudentsController.java" />
+        <option value="$PROJECT_DIR$/src/com/dylanhoffman/compsci316/UI/CoursesController.java" />
       </list>
     </option>
   </component>
@@ -266,6 +289,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -296,6 +320,14 @@
               <item name="Gradebook" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="compsci316" type="462c0819:PsiDirectoryNode" />
+              <item name="model" type="462c0819:PsiDirectoryNode" />
+              <item name="grading" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Gradebook" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Gradebook" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="compsci316" type="462c0819:PsiDirectoryNode" />
               <item name="UI" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -319,13 +351,12 @@
         </subPane>
       </pane>
       <pane id="PackagesPane" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1543506672565" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1543517227062" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -349,7 +380,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Tester">
+  <component name="RunManager" selected="Application.Gradebook_Main_UI">
     <configuration name="Gradebook_Main_UI" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="src.com.dylanhoffman.compsci316.UI.Gradebook_Main_UI" />
       <module name="Gradebook" />
@@ -407,8 +438,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Tester" />
         <item itemvalue="Application.Gradebook_Main_UI" />
+        <item itemvalue="Application.Tester" />
         <item itemvalue="Application.Main (1)" />
         <item itemvalue="Application.Main" />
       </list>
@@ -469,7 +500,8 @@
       <workItem from="1543309022186" duration="4953000" />
       <workItem from="1543315768862" duration="17000" />
       <workItem from="1543419501793" duration="14163000" />
-      <workItem from="1543502918407" duration="2271000" />
+      <workItem from="1543502918407" duration="7190000" />
+      <workItem from="1543655831580" duration="1604000" />
     </task>
     <task id="LOCAL-00001" summary="Updated StudentsController">
       <created>1543226396849</created>
@@ -482,13 +514,13 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="219442000" />
+    <option name="totallyTimeSpent" value="225965000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1916972" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1941392" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -496,8 +528,8 @@
       <window_info id="Capture Tool" order="5" />
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info active="true" anchor="bottom" id="Find" order="1" visible="true" weight="0.32857144" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4993895" weight="0.32857144" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32857144" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.4993895" visible="true" weight="0.32857144" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.31530613" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -528,6 +560,20 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Updated StudentsController" />
     <option name="LAST_COMMIT_MESSAGE" value="Updated StudentsController" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/com/dylanhoffman/compsci316/UI/StudentsController.java</url>
+          <line>132</line>
+          <properties class="src.com.dylanhoffman.compsci316.UI.StudentsController" method="importObjects">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
     <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home/javafx-src.zip!/javafx/stage/Stage.java">
@@ -635,14 +681,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/dylanhoffman/compsci316/UI/Students.fxml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="95" selection-start-line="10" selection-start-column="95" selection-end-line="10" selection-end-column="95" />
-        </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder" />
-    </entry>
     <entry file="jar://$USER_HOME$/Desktop/mysql-connector-java-8.0.12/mysql-connector-java-8.0.12.jar!/com/mysql/cj/jdbc/ConnectionImpl.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
@@ -741,11 +779,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="208">
           <caret line="1290" selection-start-line="1290" selection-end-line="1290" />
-          <folding>
-            <element signature="e#43457#43458#0" expanded="true" />
-            <element signature="e#43488#43489#0" expanded="true" />
-            <element signature="e#45880#45881#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -760,10 +793,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="583">
           <caret line="2416" selection-start-line="2416" selection-end-line="2416" />
-          <folding>
-            <element signature="e#74776#74777#0" expanded="true" />
-            <element signature="e#74809#74810#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -788,36 +817,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/log.txt" />
-    <entry file="file://$PROJECT_DIR$/src/com/dylanhoffman/compsci316/UI/GradeItemsController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2445">
-          <caret line="163" column="20" selection-start-line="163" selection-start-column="20" selection-end-line="163" selection-end-column="20" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/dylanhoffman/compsci316/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1425">
-          <caret line="95" column="40" selection-start-line="95" selection-start-column="40" selection-end-line="95" selection-end-column="40" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/dylanhoffman/compsci316/UI/MainController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" selection-start-line="5" selection-end-line="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/dylanhoffman/compsci316/logging/Log.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="465">
@@ -829,23 +828,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
           <caret line="6" column="12" selection-start-line="6" selection-start-column="12" selection-end-line="6" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/dylanhoffman/compsci316/log.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" selection-start-line="2" selection-end-line="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/dylanhoffman/compsci316/UI/StudentsController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="540">
-          <caret line="36" column="34" selection-start-line="36" selection-start-column="34" selection-end-line="36" selection-end-column="34" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -879,93 +861,119 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/dylanhoffman/compsci316/model/Student.java">
+    <entry file="file://$PROJECT_DIR$/src/com/dylanhoffman/compsci316/UI/GradeItemsController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="318">
-          <caret line="263" column="113" selection-start-line="263" selection-start-column="113" selection-end-line="263" selection-end-column="113" />
+        <state relative-caret-position="510">
+          <caret line="34" selection-start-line="34" selection-end-line="34" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/dylanhoffman/compsci316/Constants.java">
+    <entry file="file://$PROJECT_DIR$/src/com/dylanhoffman/compsci316/model/Student.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="32" column="1" lean-forward="true" selection-start-line="32" selection-start-column="1" selection-end-line="32" selection-end-column="1" />
+        <state relative-caret-position="3900">
+          <caret line="260" column="18" selection-start-line="260" selection-start-column="18" selection-end-line="260" selection-end-column="18" />
           <folding>
-            <element signature="e#395#396#0" expanded="true" />
-            <element signature="e#426#427#0" expanded="true" />
-            <element signature="e#466#467#0" expanded="true" />
-            <element signature="e#497#498#0" expanded="true" />
-            <element signature="e#730#731#0" expanded="true" />
-            <element signature="e#764#765#0" expanded="true" />
-            <element signature="e#808#809#0" expanded="true" />
-            <element signature="e#842#843#0" expanded="true" />
-            <element signature="e#882#883#0" expanded="true" />
-            <element signature="e#912#913#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/dylanhoffman/compsci316/log.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/dylanhoffman/compsci316/utility/Query.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1740">
+          <caret line="116" column="7" selection-start-line="116" selection-start-column="7" selection-end-line="116" selection-end-column="7" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/dylanhoffman/compsci316/utility/SelectStudentGrades.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1785">
-          <caret line="119" column="47" lean-forward="true" selection-start-line="119" selection-start-column="47" selection-end-line="119" selection-end-column="47" />
+        <state relative-caret-position="210">
+          <caret line="14" column="72" selection-start-line="14" selection-start-column="72" selection-end-line="14" selection-end-column="72" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/dylanhoffman/compsci316/utility/Query.java">
+    <entry file="file://$PROJECT_DIR$/src/com/dylanhoffman/compsci316/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="71" column="21" selection-start-line="71" selection-start-column="16" selection-end-line="71" selection-end-column="28" />
+        <state relative-caret-position="300">
+          <caret line="20" column="26" selection-start-line="20" selection-start-column="26" selection-end-line="20" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/dylanhoffman/compsci316/Constants.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="465">
+          <caret line="35" column="25" selection-start-line="35" selection-start-column="25" selection-end-line="35" selection-end-column="25" />
+          <folding>
+            <element signature="e#730#731#0" expanded="true" />
+            <element signature="e#764#765#0" expanded="true" />
+            <element signature="e#808#809#0" expanded="true" />
+            <element signature="e#842#843#0" expanded="true" />
+            <element signature="e#882#883#0" expanded="true" />
+            <element signature="e#912#913#0" expanded="true" />
+            <element signature="e#1007#1008#0" expanded="true" />
+            <element signature="e#1038#1039#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/dylanhoffman/compsci316/model/Course.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="203">
+          <caret line="173" column="20" selection-start-line="173" selection-start-column="20" selection-end-line="173" selection-end-column="20" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#3899#3900#0" expanded="true" />
-            <element signature="e#3925#3926#0" expanded="true" />
-            <element signature="e#4056#4057#0" expanded="true" />
-            <element signature="e#4086#4087#0" expanded="true" />
-            <element signature="e#4216#4217#0" expanded="true" />
-            <element signature="e#4245#4246#0" expanded="true" />
-            <element signature="e#4392#4393#0" expanded="true" />
-            <element signature="e#4428#4429#0" expanded="true" />
-            <element signature="e#4559#4560#0" expanded="true" />
-            <element signature="e#4588#4589#0" expanded="true" />
-            <element signature="e#4732#4733#0" expanded="true" />
-            <element signature="e#4768#4769#0" expanded="true" />
-            <element signature="e#4898#4899#0" expanded="true" />
-            <element signature="e#4929#4930#0" expanded="true" />
-            <element signature="e#5079#5080#0" expanded="true" />
-            <element signature="e#5119#5120#0" expanded="true" />
-            <element signature="e#5252#5253#0" expanded="true" />
-            <element signature="e#5284#5285#0" expanded="true" />
-            <element signature="e#5462#5463#0" expanded="true" />
-            <element signature="e#5504#5505#0" expanded="true" />
-            <element signature="e#5632#5633#0" expanded="true" />
-            <element signature="e#5661#5662#0" expanded="true" />
-            <element signature="e#5805#5806#0" expanded="true" />
-            <element signature="e#5841#5842#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/dylanhoffman/compsci316/UI/MainController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/dylanhoffman/compsci316/UI/Students.fxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-134">
+          <caret line="10" column="95" selection-start-line="10" selection-start-column="95" selection-end-line="10" selection-end-column="95" />
+        </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/dylanhoffman/compsci316/UI/StudentsController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="352">
+          <caret line="135" lean-forward="true" selection-start-line="135" selection-end-line="135" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/dylanhoffman/compsci316/UI/CoursesController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1720">
-          <caret line="214" column="17" lean-forward="true" selection-start-line="214" selection-start-column="17" selection-end-line="214" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/dylanhoffman/compsci316/model/Course.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="176" column="25" lean-forward="true" selection-start-line="176" selection-start-column="25" selection-end-line="176" selection-end-column="25" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="447">
+          <caret line="176" column="35" selection-start-line="176" selection-start-column="35" selection-end-line="176" selection-end-column="35" />
         </state>
       </provider>
     </entry>

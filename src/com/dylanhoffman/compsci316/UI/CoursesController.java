@@ -29,8 +29,6 @@ import java.util.Scanner;
 
 public class CoursesController extends MainController{
 
-    public static final String DELIMITER = ",";
-
     @FXML
     private ListView<GradeModel> listViewGradeModels;
 
@@ -161,7 +159,7 @@ public class CoursesController extends MainController{
     }
 
     @FXML
-    void importObjects(ActionEvent event) throws IOException {
+    public void importObjects(ActionEvent event) {
 
         FileChooser fileChooser = new FileChooser();
         fileChooser.setTitle("Select Courses to Import");
@@ -177,7 +175,7 @@ public class CoursesController extends MainController{
     }
 
     //method for processing an imported file
-    public void processFile(File file) throws IOException {
+    public void processFile(File file) {
 
         //buffer reader object to read the file that is passed in
         BufferedReader bufferedReader = null;
@@ -192,7 +190,7 @@ public class CoursesController extends MainController{
             while((nextLine = bufferedReader.readLine()) != null){
 
                 //set the current line to the next line split by the delimiter
-                String values[] = nextLine.trim().split(DELIMITER);
+                String values[] = nextLine.trim().split(Constants.getDelimiter());
                 int id;
                 int num;
                 String name;
@@ -242,7 +240,8 @@ public class CoursesController extends MainController{
             try {
                 if (bufferedReader != null)
                     bufferedReader.close();
-                } catch (IOException e) {
+                } catch (IOException | NullPointerException e) {
+                    Log.writeToLog(Constants.getLogPath(), e.getMessage());
                     e.printStackTrace();
                 }
             }
