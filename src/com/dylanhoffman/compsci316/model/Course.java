@@ -1,7 +1,6 @@
 package src.com.dylanhoffman.compsci316.model;
 
 import src.com.dylanhoffman.compsci316.Constants;
-import src.com.dylanhoffman.compsci316.logging.Log;
 import src.com.dylanhoffman.compsci316.model.grading.*;
 import src.com.dylanhoffman.compsci316.utility.Query;
 import src.com.dylanhoffman.compsci316.utility.SelectStudentGrades;
@@ -309,4 +308,5 @@ public class Course {
     public void setGradeModel(GradeModel gradeModel) {
         this.gradeModel = gradeModel;
     }
+
 }

@@ -12,3 +12,95 @@ Nov 29, 2018 10:52:16 AM src.com.dylanhoffman.compsci316.logging.Log writeToLog
 WARNING: Duplicate entry '1' for key 'PRIMARY'
 Nov 29, 2018 10:52:30 AM src.com.dylanhoffman.compsci316.logging.Log writeToLog
 WARNING: Duplicate entry '12345678' for key 'PRIMARY'
+Dec 01, 2018 7:41:30 PM src.com.dylanhoffman.compsci316.logging.Log writeToLog
+WARNING: For input string: "ID,NUM,NAME,GRADEMODEL""
+Dec 01, 2018 7:41:32 PM src.com.dylanhoffman.compsci316.logging.Log writeToLog
+WARNING: For input string: "100001,101,Intro to Economics,HighSchoolGradeModel""
+Dec 01, 2018 7:41:35 PM src.com.dylanhoffman.compsci316.logging.Log writeToLog
+WARNING: For input string: "100002,101,Mathematics,HighSchoolGradeModel""
+Dec 01, 2018 7:45:51 PM src.com.dylanhoffman.compsci316.logging.Log writeToLog
+WARNING: For input string: "ID,NUM,NAME,GRADEMODEL""
+Dec 01, 2018 7:45:53 PM src.com.dylanhoffman.compsci316.logging.Log writeToLog
+WARNING: For input string: "100001,101,Intro to Economics,HighSchoolGradeModel""
+Dec 01, 2018 7:45:54 PM src.com.dylanhoffman.compsci316.logging.Log writeToLog
+WARNING: For input string: "100002,101,Mathematics,HighSchoolGradeModel""
+Dec 01, 2018 7:45:55 PM src.com.dylanhoffman.compsci316.logging.Log writeToLog
+WARNING: For input string: "100003,201,Macro Economics,HighSchoolGradeModel""
+Dec 01, 2018 7:45:55 PM src.com.dylanhoffman.compsci316.logging.Log writeToLog
+WARNING: For input string: "100004,201,Statistics,HighSchoolGradeModel""
+Dec 01, 2018 7:45:56 PM src.com.dylanhoffman.compsci316.logging.Log writeToLog
+WARNING: For input string: "100005,201,Pre-Calculus,HighSchoolGradeModel""
+Dec 01, 2018 7:45:56 PM src.com.dylanhoffman.compsci316.logging.Log writeToLog
+WARNING: For input string: "100006,301,Calculus,CollegeGradeModel""
+Dec 01, 2018 7:45:57 PM src.com.dylanhoffman.compsci316.logging.Log writeToLog
+WARNING: For input string: "100007,301,Micro Economics,CollegeGradeModel""
+Dec 01, 2018 7:47:09 PM src.com.dylanhoffman.compsci316.logging.Log writeToLog
+WARNING: For input string: "ID,NUM,NAME,GRADEMODEL""
+Dec 01, 2018 7:47:12 PM src.com.dylanhoffman.compsci316.logging.Log writeToLog
+WARNING: For input string: "100001,101,Intro to Economics,HighSchoolGradeModel""
+Dec 01, 2018 7:47:12 PM src.com.dylanhoffman.compsci316.logging.Log writeToLog
+WARNING: For input string: "100002,101,Mathematics,HighSchoolGradeModel""
+Dec 01, 2018 7:47:12 PM src.com.dylanhoffman.compsci316.logging.Log writeToLog
+WARNING: For input string: "100003,201,Macro Economics,HighSchoolGradeModel""
+Dec 01, 2018 7:47:12 PM src.com.dylanhoffman.compsci316.logging.Log writeToLog
+WARNING: For input string: "100004,201,Statistics,HighSchoolGradeModel""
+Dec 01, 2018 7:47:13 PM src.com.dylanhoffman.compsci316.logging.Log writeToLog
+WARNING: For input string: "100005,201,Pre-Calculus,HighSchoolGradeModel""
+Dec 01, 2018 7:47:13 PM src.com.dylanhoffman.compsci316.logging.Log writeToLog
+WARNING: For input string: "100006,301,Calculus,CollegeGradeModel""
+Dec 01, 2018 7:47:13 PM src.com.dylanhoffman.compsci316.logging.Log writeToLog
+WARNING: For input string: "100007,301,Micro Economics,CollegeGradeModel""
+Dec 01, 2018 7:50:31 PM src.com.dylanhoffman.compsci316.logging.Log writeToLog
+WARNING: For input string: "ID"
+Dec 01, 2018 7:50:33 PM src.com.dylanhoffman.compsci316.logging.Log writeToLog
+WARNING: Duplicate entry '100001' for key 'PRIMARY'
+Dec 01, 2018 7:50:34 PM src.com.dylanhoffman.compsci316.logging.Log writeToLog
+WARNING: Duplicate entry '100002' for key 'PRIMARY'
+Dec 01, 2018 7:50:35 PM src.com.dylanhoffman.compsci316.logging.Log writeToLog
+WARNING: Duplicate entry '100003' for key 'PRIMARY'
+Dec 01, 2018 7:50:35 PM src.com.dylanhoffman.compsci316.logging.Log writeToLog
+WARNING: Duplicate entry '100004' for key 'PRIMARY'
+Dec 01, 2018 7:50:36 PM src.com.dylanhoffman.compsci316.logging.Log writeToLog
+WARNING: Duplicate entry '100005' for key 'PRIMARY'
+Dec 01, 2018 7:50:36 PM src.com.dylanhoffman.compsci316.logging.Log writeToLog
+WARNING: Duplicate entry '100006' for key 'PRIMARY'
+Dec 01, 2018 7:50:38 PM src.com.dylanhoffman.compsci316.logging.Log writeToLog
+WARNING: Duplicate entry '100007' for key 'PRIMARY'
+Dec 01, 2018 7:51:11 PM src.com.dylanhoffman.compsci316.logging.Log writeToLog
+WARNING: For input string: "ID"
+Dec 01, 2018 7:51:33 PM src.com.dylanhoffman.compsci316.logging.Log writeToLog
+WARNING: For input string: "ID"
+Dec 01, 2018 8:38:15 PM src.com.dylanhoffman.compsci316.logging.Log writeToLog
+WARNING: For input string: "ID"
+Dec 01, 2018 8:38:16 PM src.com.dylanhoffman.compsci316.logging.Log writeToLog
+WARNING: Duplicate entry '100001' for key 'PRIMARY'
+Dec 01, 2018 8:38:17 PM src.com.dylanhoffman.compsci316.logging.Log writeToLog
+WARNING: Duplicate entry '100002' for key 'PRIMARY'
+Dec 01, 2018 8:38:17 PM src.com.dylanhoffman.compsci316.logging.Log writeToLog
+WARNING: Duplicate entry '100003' for key 'PRIMARY'
+Dec 01, 2018 8:38:18 PM src.com.dylanhoffman.compsci316.logging.Log writeToLog
+WARNING: Duplicate entry '100004' for key 'PRIMARY'
+Dec 01, 2018 8:38:18 PM src.com.dylanhoffman.compsci316.logging.Log writeToLog
+WARNING: Duplicate entry '100005' for key 'PRIMARY'
+Dec 01, 2018 8:38:18 PM src.com.dylanhoffman.compsci316.logging.Log writeToLog
+WARNING: Duplicate entry '100006' for key 'PRIMARY'
+Dec 01, 2018 8:38:19 PM src.com.dylanhoffman.compsci316.logging.Log writeToLog
+WARNING: Duplicate entry '100007' for key 'PRIMARY'
+Dec 01, 2018 8:48:46 PM src.com.dylanhoffman.compsci316.logging.Log writeToLog
+WARNING: Duplicate entry '20000001' for key 'PRIMARY'
+Dec 01, 2018 8:50:34 PM src.com.dylanhoffman.compsci316.logging.Log writeToLog
+WARNING: For input string: "﻿20000001"
+Dec 01, 2018 8:52:59 PM src.com.dylanhoffman.compsci316.logging.Log writeToLog
+WARNING: For input string: ""ID"
+Dec 01, 2018 8:53:01 PM src.com.dylanhoffman.compsci316.logging.Log writeToLog
+WARNING: For input string: ""20000001"
+Dec 01, 2018 8:53:02 PM src.com.dylanhoffman.compsci316.logging.Log writeToLog
+WARNING: For input string: ""20000002"
+Dec 01, 2018 8:53:02 PM src.com.dylanhoffman.compsci316.logging.Log writeToLog
+WARNING: For input string: ""20000003"
+Dec 01, 2018 8:53:03 PM src.com.dylanhoffman.compsci316.logging.Log writeToLog
+WARNING: For input string: ""20000004"
+Dec 01, 2018 8:53:03 PM src.com.dylanhoffman.compsci316.logging.Log writeToLog
+WARNING: For input string: ""20000005"
+Dec 01, 2018 8:53:04 PM src.com.dylanhoffman.compsci316.logging.Log writeToLog
+WARNING: For input string: ""20000006"

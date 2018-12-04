@@ -10,7 +10,7 @@ public final class Constants {
     private static final String DB_USERNAME = "root";
     private static final String DB_PASSWORD = "Winter I_S Coming!";
     private static final String DB_NAME = "GradeBook_Application";
-    private static final String DELIMITER = ";";
+    private static final String DELIMITER = ",";
 
     public static String getLogPath(){
         return LOG_PATH;
