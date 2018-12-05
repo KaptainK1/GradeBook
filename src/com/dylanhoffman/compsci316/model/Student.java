@@ -147,6 +147,20 @@ public class Student {
 
     }
 
+    public static void insertGradeItem(int student, GradeItem gradeItem, Course course) throws SQLException{
+
+        course.grade(gradeItem);
+
+        String strInsert = "into GradeItems VALUES ( " + gradeItem.getTotalCorrect() + "," + gradeItem.getTotalPossible() + ", '" +
+                gradeItem.printLetterGrade() + "', " + "NULL, " + student + ", " + course.getCourseID() + ", '" + gradeItem.getGradeName() + "' )";
+
+        Query insertQuery = new Query(Constants.getDbName(), Constants.getDbUsername(), Constants.getDbPassword(), INSERT, strInsert );
+        insertQuery.executeQueryThrows();
+
+    }
+
+
+
     public static String[][] searchStudents(){
 
         String query = "Select FirstName, LastName, StudentID From Students";

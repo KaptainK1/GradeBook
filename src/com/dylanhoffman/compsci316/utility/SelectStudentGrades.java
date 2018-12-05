@@ -207,6 +207,45 @@ public class SelectStudentGrades {
         return allStudents;
     }
 
+    public ArrayList<Student> executeALLStudentQueryThrows() throws SQLException{
+//        String query = (new StringBuilder().append(getQueryType().toString()).append(" ").append(getStrSelect())).toString();
+//        String query = "SELECT * from Students where CourseID = " + course.getCourseID();
+
+        String query = "SELECT firstname, lastname, studentid FROM Students ";
+
+        int rowCount = 1;
+        ArrayList<Student> allStudents = new ArrayList<>();
+        String firstName;
+        String lastName;
+        int studentID;
+
+        //create the connection object, then create the statement object
+        Connection connection = DriverManager.getConnection( getUrl() + getDbName() + "?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true", getDbUser(), getDbPass());
+        Statement statement = connection.prepareStatement(query);
+
+        System.out.println("SQL Select Statement is " + query);
+        ResultSet result = statement.executeQuery(query);
+        ResultSetMetaData resultDataSet = result.getMetaData();
+        int columns = resultDataSet.getColumnCount();
+
+        System.out.println("The records selected are:");
+
+        while(result.next()) {   // Move the cursor to the next row, return false if no more rows
+//                for (int i = 1; i <= columns; i++) {
+            //print out each cell value for all columns and rows
+            firstName=result.getString("FirstName");
+            lastName=result.getString("LastName");
+            studentID=result.getInt("StudentID");
+            allStudents.add(new Student(firstName,lastName,studentID));
+//                }
+        }
+        ++rowCount;
+
+        System.out.println("Total number of records = " + rowCount);
+
+        return allStudents;
+    }
+
 //    public ArrayList<Course> executeCourseQuery(){
 ////        String query = (new StringBuilder().append(getQueryType().toString()).append(" ").append(getStrSelect())).toString();
 ////        String query = "SELECT * from Students where CourseID = " + course.getCourseID();

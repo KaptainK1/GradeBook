@@ -104,3 +104,27 @@ Dec 01, 2018 8:53:03 PM src.com.dylanhoffman.compsci316.logging.Log writeToLog
 WARNING: For input string: ""20000005"
 Dec 01, 2018 8:53:04 PM src.com.dylanhoffman.compsci316.logging.Log writeToLog
 WARNING: For input string: ""20000006"
+Dec 01, 2018 8:54:59 PM src.com.dylanhoffman.compsci316.logging.Log writeToLog
+WARNING: For input string: "ID"
+Dec 01, 2018 8:55:00 PM src.com.dylanhoffman.compsci316.logging.Log writeToLog
+WARNING: Duplicate entry '20000001' for key 'PRIMARY'
+Dec 01, 2018 8:55:00 PM src.com.dylanhoffman.compsci316.logging.Log writeToLog
+WARNING: Duplicate entry '20000002' for key 'PRIMARY'
+Dec 01, 2018 8:55:01 PM src.com.dylanhoffman.compsci316.logging.Log writeToLog
+WARNING: Duplicate entry '20000003' for key 'PRIMARY'
+Dec 01, 2018 8:55:01 PM src.com.dylanhoffman.compsci316.logging.Log writeToLog
+WARNING: Duplicate entry '20000004' for key 'PRIMARY'
+Dec 01, 2018 8:55:02 PM src.com.dylanhoffman.compsci316.logging.Log writeToLog
+WARNING: Duplicate entry '20000005' for key 'PRIMARY'
+Dec 01, 2018 8:55:02 PM src.com.dylanhoffman.compsci316.logging.Log writeToLog
+WARNING: Duplicate entry '20000006' for key 'PRIMARY'
+Dec 05, 2018 2:28:49 AM src.com.dylanhoffman.compsci316.logging.Log writeToLog
+WARNING: null
+Dec 05, 2018 2:35:54 AM src.com.dylanhoffman.compsci316.logging.Log writeToLog
+WARNING: null
+Dec 05, 2018 2:40:01 AM src.com.dylanhoffman.compsci316.logging.Log writeToLog
+WARNING: You may only select a student from the all students list, or the students in course list!
+Dec 05, 2018 2:44:05 AM src.com.dylanhoffman.compsci316.logging.Log writeToLog
+WARNING: You may only select a student from the all students list, or the students in course list!
+Dec 05, 2018 2:46:17 AM src.com.dylanhoffman.compsci316.logging.Log writeToLog
+WARNING: You may only select a student from the all students list, or the students in course list!

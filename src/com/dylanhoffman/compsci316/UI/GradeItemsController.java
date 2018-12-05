@@ -33,20 +33,26 @@ public class GradeItemsController extends MainController{
     @FXML
     private TextField totalPoints;
 
+
     @FXML
     private ListView<Course> courseListView;
 
     @FXML
     private ListView<Student> studentsListView;
 
+    @FXML
+    private ListView<Student> allStudentsListView;
+
 
     //private observable list to hold courses and students
     private ObservableList<Course> courses = FXCollections.observableArrayList();
     private ObservableList<Student> students = FXCollections.observableArrayList();
+    private ObservableList<Student> allStudentsAvailable = FXCollections.observableArrayList();
 
     //private array list to hold all students and all courses
     private ArrayList<Student> allStudents = new ArrayList<>();
     private ArrayList<Course> allCourses = new ArrayList<>();
+    private ArrayList<Student> populateAllStudents = new ArrayList<>();
 
 
     /**
@@ -56,6 +62,7 @@ public class GradeItemsController extends MainController{
      */
 
     public void initialize(){
+        initializeAllStudents();
         initializeCourseList();
 
         //use a listener for when the course selected item changes
@@ -91,7 +98,7 @@ public class GradeItemsController extends MainController{
     void insertGradeItem(ActionEvent event) {
 
         //variables to hold user input data
-
+        boolean isError = false;
         int pointsCorrect = 0;
         int pointsPossible = 0;
         String name = "";
@@ -105,6 +112,7 @@ public class GradeItemsController extends MainController{
 
 
         } catch (NumberFormatException e){
+            isError=true;
             Log.writeToLog(Constants.getLogPath(),e.getMessage());
             clearFieldsOnDataException();
         }
@@ -114,21 +122,42 @@ public class GradeItemsController extends MainController{
         //also try to catch an illegal argument exception thrown when the object is created
         //finally default catch all exception
         try {
-            GradeItem gradeItem = new GradeItem(name,pointsCorrect,pointsPossible);
-            Student.insertGradeItem(studentsListView.getSelectionModel().getSelectedItem(),gradeItem,courseListView.getSelectionModel().getSelectedItem());
+
+                if(allStudentsListView.getSelectionModel().getSelectedItem()!=null && studentsListView.getSelectionModel().getSelectedItem()==null){
+                    GradeItem gradeItem = new GradeItem(name,pointsCorrect,pointsPossible);
+                    Student.insertGradeItem(allStudentsListView.getSelectionModel().getSelectedItem(),gradeItem,courseListView.getSelectionModel().getSelectedItem());
+                } else if (allStudentsListView.getSelectionModel().getSelectedItem()==null && studentsListView.getSelectionModel().getSelectedItem()!=null){
+                    GradeItem gradeItem = new GradeItem(name,pointsCorrect,pointsPossible);
+                    Student.insertGradeItem(studentsListView.getSelectionModel().getSelectedItem(),gradeItem,courseListView.getSelectionModel().getSelectedItem());
+                } else {
+                    throw new IllegalArgumentException("You may only select a student from the all students list, or the students in course list!");
+                }
+
         } catch (NullPointerException e) {
+            isError=true;
             Log.writeToLog(Constants.getLogPath(),e.getMessage());
             super.displayAlertBox("Error - Student or Course Not Selected", "A Course and a Student must be selected!!");
         } catch (IllegalArgumentException e) {
+            isError=true;
             Log.writeToLog(Constants.getLogPath(), e.getMessage());
             super.displayAlertBox("Error with GradeItem Data", e.getMessage());
         }catch (SQLException e){
+            isError=true;
                 Log.writeToLog(Constants.getLogPath(),e.getMessage());
                 super.displayAlertBox("Error with the Database", "Please check your data and try again.");
         } catch (Exception e){
+            isError=true;
             Log.writeToLog(Constants.getLogPath(),e.getMessage());
             super.displayAlertBox("General Error", "An error has occurred, please check the data and try again!");
         }
+
+        allStudents.clear();
+        students.removeAll();
+        studentsListView.getItems().clear();
+        allStudentsListView.getSelectionModel().clearSelection();
+        initializeStudentList(courseListView.getSelectionModel().getSelectedItem());
+        if (!isError)
+            super.displayDisplayBox("GradeItem Added Successfully!", gradeItemName.getText().trim() + " Was successfully added!");
     }
 
     /**
@@ -195,6 +224,12 @@ public class GradeItemsController extends MainController{
             Log.writeToLog(Constants.getLogPath(), e.getMessage());
             super.displayAlertBox("Error with the Database", "Please check your data and try again");
         }
+
+        allStudents.clear();
+        students.removeAll();
+        studentsListView.getItems().clear();
+        initializeStudentList(courseListView.getSelectionModel().getSelectedItem());
+        super.displayDisplayBox("GradeItem Deleted Successfully!", gradeItemName.getText().trim() + " Was Deleted!");
     }
 
     /**
@@ -246,6 +281,26 @@ public class GradeItemsController extends MainController{
 
         //set the items of the list view to the observable array list
         studentsListView.setItems(students);
+    }
+
+    public void initializeAllStudents(){
+        //create the select student query
+        SelectStudentGrades selectStudentGrades = new SelectStudentGrades("GradeBook_Application", "root", "Winter I_S Coming!");
+
+        //run the student query method which builds an array list of student objects belonging to the course
+        try {
+            populateAllStudents = selectStudentGrades.executeALLStudentQueryThrows();
+        } catch (SQLException e) {
+            Log.writeToLog(Constants.getLogPath(), e.getMessage());
+            super.displayAlertBox("Error with initializing course list", "There was an error with the database, please try again.");
+        }
+
+        //set the observable array list to the returned array list
+        allStudentsAvailable.addAll(populateAllStudents);
+
+        //set the items of the list view to the observable array list
+        allStudentsListView.setItems(allStudentsAvailable);
+
     }
 
 

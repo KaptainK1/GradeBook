@@ -63,6 +63,8 @@ public class StudentsController extends MainController{
             clearFieldsOnDataException();
             super.displayAlertBox("Generic Error with Adding Student", "Please Check the data entered for the student and try again.");
         }
+
+        super.displayDisplayBox("Student Added Successfully!", studentFirstName.getText().trim() + " Was successfully added!");
     }
 
     @FXML
@@ -115,6 +117,7 @@ public class StudentsController extends MainController{
             super.displayAlertBox("Student Deleted! ", studentFirstName.getText().trim() + " " + studentLastName.getText().trim());
 
         }
+
     }
 
     /**

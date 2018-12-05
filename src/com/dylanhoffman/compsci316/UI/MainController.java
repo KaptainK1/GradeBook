@@ -35,6 +35,11 @@ public class MainController {
 
     }
 
+    public void displayDisplayBox(String title, String message){
+        DisplayBox displayBox = new DisplayBox();
+        displayBox.display(title,message,Constants.getCssPath());
+    }
+
     /**
      * public method to display an alert box when an exception is thrown
      * @param title title of the alert box
