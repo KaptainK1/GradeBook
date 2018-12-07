@@ -45,7 +45,7 @@ public class CoursesController extends MainController{
     @FXML
     private AnchorPane courseContainer;
 
-
+    //create 1 of each grade model
     private ElementaryGradeModel elementaryGradeModel = new ElementaryGradeModel();
     private HighSchoolGradeModel highSchoolGradeModel = new HighSchoolGradeModel();
     private CollegeGradeModel collegeGradeModel = new CollegeGradeModel();
@@ -64,35 +64,48 @@ public class CoursesController extends MainController{
     void insertCourse(ActionEvent event) {
 
         try {
-            Course.insertCourse(Integer.parseInt(coursesCourseID.getText().trim()), Integer.parseInt(coursesCourseNum.getText().trim()),
-                    coursesCourseName.getText().trim(), listViewGradeModels.getSelectionModel().getSelectedItem().getClass().getSimpleName());
+            Course course = new Course(Integer.parseInt(coursesCourseID.getText().trim()), Integer.parseInt(coursesCourseNum.getText().trim()),
+                    coursesCourseName.getText().trim(), listViewGradeModels.getSelectionModel().getSelectedItem());
+            course.insertCourse();
+            super.displayDisplayBox("Course Added Successfully!", coursesCourseName.getText().trim() + " Was successfully added!");
+
         } catch (NullPointerException e) {
+
             Log.writeToLog(Constants.getLogPath(), e.getMessage());
             clearFieldsOnDataException();
             super.displayAlertBox("Error with Course Data", "Please select a grade model before continuing");
+
         } catch (IllegalArgumentException e){
+
             Log.writeToLog(Constants.getLogPath(), e.getMessage());
             clearFieldsOnDataException();
             super.displayAlertBox("Error with Data input", e.getMessage());
+
         } catch (InputMismatchException e){
+
             Log.writeToLog(Constants.getLogPath(),e.getMessage());
             clearFieldsOnDataException();
             super.displayAlertBox("Error with Data input", "Please check the entered data and try again");
+
         } catch (SQLIntegrityConstraintViolationException e) {
+
             Log.writeToLog(Constants.getLogPath(), e.getMessage());
             clearFieldsOnDataException();
             super.displayAlertBox("Error with Adding Course", "Cannot add a course with the same ID");
+
         } catch (SQLException e){
+
             Log.writeToLog(Constants.getLogPath(), e.getMessage());
             clearFieldsOnDataException();
             super.displayAlertBox("Error with Adding Course into Database", "Please check your data and try again");
+
         } catch (Exception e){
+
             Log.writeToLog(Constants.getLogPath(),e.getMessage());
             clearFieldsOnDataException();
             super.displayAlertBox("Generic Error with Adding Course", "Please Check the data entered for the course and try again.");
         }
 
-        super.displayDisplayBox("Course Added Successfully!", coursesCourseName.getText().trim() + " Was successfully added!");
     }
 
     @FXML
@@ -121,6 +134,7 @@ public class CoursesController extends MainController{
     @FXML
     void deleteCourse(ActionEvent event) {
 
+        boolean isError = false;
         ConfirmBox confirmBox = new ConfirmBox();
 
         try {
@@ -132,6 +146,7 @@ public class CoursesController extends MainController{
                 try {
                     course.deleteCourse();
                 } catch (SQLException e){
+                    isError=true;
                     Log.writeToLog(Constants.getLogPath(), e.getMessage());
                     super.displayAlertBox("Cannot Delete the Course", e.getMessage());
                 }
@@ -141,24 +156,32 @@ public class CoursesController extends MainController{
                 displayBox.display("Course Not Deleted!", "You opted to not delete the course", Constants.getCssPath());
             }
         } catch (NullPointerException e){
+            isError=true;
             clearFieldsOnDataException();
             Log.writeToLog(Constants.getLogPath(),e.getMessage());
             super.displayAlertBox("Error with Course Data", "Please select a grade model before continuing");
         } catch (InputMismatchException e){
+            isError=true;
             Log.writeToLog(Constants.getLogPath(),e.getMessage());
             clearFieldsOnDataException();
             super.displayAlertBox("Error with Data input", "Please check the entered data and try again");
         } catch (Exception e){
+            isError=true;
             Log.writeToLog(Constants.getLogPath(),e.getMessage());
             clearFieldsOnDataException();
             super.displayAlertBox("Generic Error with Adding Course", "Please Check the data entered for the course and try again.");
         }
-
-        super.displayDisplayBox("Course Deleted Successfully!", coursesCourseName.getText().trim() + " Was successfully Deleted!");
+        if (!isError)
+            super.displayDisplayBox("Course Deleted Successfully!", coursesCourseName.getText().trim() + " Was successfully Deleted!");
 
     }
 
     public void clearFieldsOnDataException(){
+
+        coursesCourseID.setText("");
+        coursesCourseNum.setText("");
+        coursesCourseName.setText("");
+
         coursesCourseID.setPromptText("Enter valid Course ID");
         coursesCourseNum.setPromptText("Enter valid Course Num");
         coursesCourseName.setPromptText("Enter valid Course Name");

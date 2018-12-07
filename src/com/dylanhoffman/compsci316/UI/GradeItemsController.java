@@ -7,6 +7,7 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.ListView;
+import javafx.scene.control.SelectionMode;
 import javafx.scene.control.TextField;
 import src.com.dylanhoffman.compsci316.Constants;
 import src.com.dylanhoffman.compsci316.logging.Log;
@@ -14,7 +15,6 @@ import src.com.dylanhoffman.compsci316.model.Course;
 import src.com.dylanhoffman.compsci316.model.GradeItem;
 import src.com.dylanhoffman.compsci316.model.Student;
 import src.com.dylanhoffman.compsci316.utility.SelectStudentGrades;
-
 import java.sql.SQLException;
 import java.util.ArrayList;
 
@@ -33,27 +33,24 @@ public class GradeItemsController extends MainController{
     @FXML
     private TextField totalPoints;
 
+    @FXML
+    public ListView<Course> courseListView;
 
     @FXML
-    private ListView<Course> courseListView;
+    public ListView<Student> studentsListView;
 
     @FXML
-    private ListView<Student> studentsListView;
-
-    @FXML
-    private ListView<Student> allStudentsListView;
-
+    public ListView<Student> allStudentsListView;
 
     //private observable list to hold courses and students
-    private ObservableList<Course> courses = FXCollections.observableArrayList();
-    private ObservableList<Student> students = FXCollections.observableArrayList();
-    private ObservableList<Student> allStudentsAvailable = FXCollections.observableArrayList();
+    public ObservableList<Course> courses = FXCollections.observableArrayList();
+    public ObservableList<Student> students = FXCollections.observableArrayList();
+    public ObservableList<Student> allStudentsAvailable = FXCollections.observableArrayList();
 
     //private array list to hold all students and all courses
-    private ArrayList<Student> allStudents = new ArrayList<>();
-    private ArrayList<Course> allCourses = new ArrayList<>();
-    private ArrayList<Student> populateAllStudents = new ArrayList<>();
-
+    public ArrayList<Student> allStudents = new ArrayList<>();
+    public ArrayList<Course> allCourses = new ArrayList<>();
+    public ArrayList<Student> populateAllStudents = new ArrayList<>();
 
     /**
      * method to initialize the UI
@@ -62,6 +59,7 @@ public class GradeItemsController extends MainController{
      */
 
     public void initialize(){
+
         initializeAllStudents();
         initializeCourseList();
 
@@ -79,12 +77,10 @@ public class GradeItemsController extends MainController{
                             initializeStudentList(newValue);
                         } catch (NullPointerException e){
                             Log.writeToLog(Constants.getLogPath(),e.getMessage());
-                            displayAlertBox("A course was unselected!", "The Student List is now clear");
                             allStudents.clear();
                             students.removeAll();
                             studentsListView.getItems().clear();
                         }
-
                     }
                 }
         );
@@ -92,13 +88,12 @@ public class GradeItemsController extends MainController{
 
     /**
      * method to insert a grade item
-     * @param event
+     * @param event button click
      */
     @FXML
     void insertGradeItem(ActionEvent event) {
 
         //variables to hold user input data
-        boolean isError = false;
         int pointsCorrect = 0;
         int pointsPossible = 0;
         String name = "";
@@ -112,7 +107,6 @@ public class GradeItemsController extends MainController{
 
 
         } catch (NumberFormatException e){
-            isError=true;
             Log.writeToLog(Constants.getLogPath(),e.getMessage());
             clearFieldsOnDataException();
         }
@@ -126,27 +120,25 @@ public class GradeItemsController extends MainController{
                 if(allStudentsListView.getSelectionModel().getSelectedItem()!=null && studentsListView.getSelectionModel().getSelectedItem()==null){
                     GradeItem gradeItem = new GradeItem(name,pointsCorrect,pointsPossible);
                     Student.insertGradeItem(allStudentsListView.getSelectionModel().getSelectedItem(),gradeItem,courseListView.getSelectionModel().getSelectedItem());
+                    super.displayDisplayBox("GradeItem Added Successfully!", gradeItemName.getText().trim() + " Was successfully added!");
                 } else if (allStudentsListView.getSelectionModel().getSelectedItem()==null && studentsListView.getSelectionModel().getSelectedItem()!=null){
                     GradeItem gradeItem = new GradeItem(name,pointsCorrect,pointsPossible);
                     Student.insertGradeItem(studentsListView.getSelectionModel().getSelectedItem(),gradeItem,courseListView.getSelectionModel().getSelectedItem());
+                    super.displayDisplayBox("GradeItem Added Successfully!!", gradeItemName.getText().trim() + " Was successfully added!");
                 } else {
                     throw new IllegalArgumentException("You may only select a student from the all students list, or the students in course list!");
                 }
 
         } catch (NullPointerException e) {
-            isError=true;
             Log.writeToLog(Constants.getLogPath(),e.getMessage());
             super.displayAlertBox("Error - Student or Course Not Selected", "A Course and a Student must be selected!!");
         } catch (IllegalArgumentException e) {
-            isError=true;
             Log.writeToLog(Constants.getLogPath(), e.getMessage());
             super.displayAlertBox("Error with GradeItem Data", e.getMessage());
         }catch (SQLException e){
-            isError=true;
                 Log.writeToLog(Constants.getLogPath(),e.getMessage());
                 super.displayAlertBox("Error with the Database", "Please check your data and try again.");
         } catch (Exception e){
-            isError=true;
             Log.writeToLog(Constants.getLogPath(),e.getMessage());
             super.displayAlertBox("General Error", "An error has occurred, please check the data and try again!");
         }
@@ -156,13 +148,11 @@ public class GradeItemsController extends MainController{
         studentsListView.getItems().clear();
         allStudentsListView.getSelectionModel().clearSelection();
         initializeStudentList(courseListView.getSelectionModel().getSelectedItem());
-        if (!isError)
-            super.displayDisplayBox("GradeItem Added Successfully!", gradeItemName.getText().trim() + " Was successfully added!");
     }
 
     /**
      * method to search for grade items
-     * @param event
+     * @param event button click
      */
     @FXML
     void searchGradeItem(ActionEvent event) {
@@ -213,6 +203,7 @@ public class GradeItemsController extends MainController{
                     name, totalCorrect, totalPossible
             );
 
+            super.displayDisplayBox("GradeItem Deleted Successfully!", gradeItemName.getText().trim() + " Was Deleted!");
         } catch (NumberFormatException e) {
             Log.writeToLog(Constants.getLogPath(),e.getMessage());
             clearFieldsOnDataException();
@@ -223,13 +214,15 @@ public class GradeItemsController extends MainController{
         } catch (SQLException e) {
             Log.writeToLog(Constants.getLogPath(), e.getMessage());
             super.displayAlertBox("Error with the Database", "Please check your data and try again");
+        } catch (Exception e){
+            Log.writeToLog(Constants.getLogPath(), e.getMessage());
+            super.displayAlertBox("Generic Error","Please try your action again");
         }
 
         allStudents.clear();
         students.removeAll();
         studentsListView.getItems().clear();
         initializeStudentList(courseListView.getSelectionModel().getSelectedItem());
-        super.displayDisplayBox("GradeItem Deleted Successfully!", gradeItemName.getText().trim() + " Was Deleted!");
     }
 
     /**
@@ -238,6 +231,9 @@ public class GradeItemsController extends MainController{
     public void initializeCourseList(){
         //first clear the all courses array list
         allCourses.clear();
+        courses.removeAll();
+        courseListView.getItems().clear();
+
 
         //create the select student query object
         SelectStudentGrades selectStudentGrades = new SelectStudentGrades("GradeBook_Application", "root", "Winter I_S Coming!");
@@ -284,6 +280,11 @@ public class GradeItemsController extends MainController{
     }
 
     public void initializeAllStudents(){
+
+        populateAllStudents.clear();
+        allStudentsAvailable.removeAll();
+        allStudentsListView.getItems().clear();
+
         //create the select student query
         SelectStudentGrades selectStudentGrades = new SelectStudentGrades("GradeBook_Application", "root", "Winter I_S Coming!");
 
@@ -322,6 +323,10 @@ public class GradeItemsController extends MainController{
 
     }
 
+    /**
+     * Method to calculate all student grades based on the course selected
+     * @param event button click
+     */
     @FXML
     void calculateStudentGrades(ActionEvent event) {
         ArrayList<Student> students = new ArrayList<>();
@@ -330,8 +335,14 @@ public class GradeItemsController extends MainController{
         try {
             //create the select student query
             SelectStudentGrades selectStudentGrades = new SelectStudentGrades("GradeBook_Application", "root", "Winter I_S Coming!");
+
+            //assign the student array to the result of query
             students = selectStudentGrades.executeStudentQueryThrows(courseListView.getSelectionModel().getSelectedItem());
+
+            //set course's students array list equal to the current students array list
             courseListView.getSelectionModel().getSelectedItem().setStudents(students);
+
+            //run the course's calculate all students in course method
             displayBox.display("Course Grades for Course" + courseListView.getSelectionModel().getSelectedItem(),
                     courseListView.getSelectionModel().getSelectedItem().calculateAllStudentsInCourse(),
                     Constants.getCssPath());
@@ -344,7 +355,16 @@ public class GradeItemsController extends MainController{
         }
 
     }
-
-
+//
+//    public boolean removeStudentFromAllStudentsList(Student student){
+//
+//        try {
+//            populateAllStudents.remove(student);
+//            allStudentsListView.getItems().remove(student);
+//            allStudentsAvailable.remove(student);
+//        } catch (Exception e){
+//            return false;
+//        }
+//        return true;
+//    }
 }
-

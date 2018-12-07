@@ -32,6 +32,7 @@ public class Course {
      * @param courseID int courseID to hold the course id
      * @param courseNUM int courseNum to hold the course number
      * @param courseName String courseName to hold the course name
+     * @param gradeModel The grademodel to be used for the course
      */
     public Course(int courseID, int courseNUM, String courseName, GradeModel gradeModel){ //
         //course number must be between 100 and 1000
@@ -58,8 +59,8 @@ public class Course {
      * This is used because we store the grademodel for the course into the database as a enum
      * When we need to create a course object, we can call this method by passing in the String
      * that represents the grade model object we want to create.
-     * @param strGradeModel
-     * @return
+     * @param strGradeModel string representation of the grade model
+     * @return return a grademodel object
      */
     public static GradeModel convertGradeModel(String strGradeModel){
         //set default to elementary grading model
@@ -99,6 +100,7 @@ public class Course {
 
     /**
      * public method that inserts the course into the Database
+     * @throws SQLException Throws SQL Exception on error with Database
      */
     public void insertCourse() throws SQLException{
         String strInsert = "into Courses VALUES ( " + getCourseID() + ", " + getCourseNUM() + ", '" + getCourseName() + "'" + ", '" + getGradeModel().getClass().getSimpleName() +"' )";
@@ -133,6 +135,7 @@ public class Course {
 
     /**
      * main public method to calculate all grade items per student in the course
+     * @throws SQLException Throws SQL Exception on error with Database
      */
     public void calculateAllStudents() throws SQLException{
 
@@ -165,6 +168,7 @@ public class Course {
     /**
      * public static method to delete all students and gradeitems from the Database
      * method also deletes all gradeitems for the student
+     * @throws SQLException Throws SQL Exception on error with Database
      */
     public void deleteCourse() throws SQLException{
         //first delete all grade items for the student
@@ -210,6 +214,7 @@ public class Course {
      * public method that retrieves the student grade for the entire course
      * @param student accepts 1 parameter of type student
      * @return returns the grade as a Character Array
+     * @throws SQLException Throws SQL Exception on error with Database
      */
     //method for calculating a single students grades for this given course
     public Character[] retrieveStudentGrades(Student student) throws SQLException{

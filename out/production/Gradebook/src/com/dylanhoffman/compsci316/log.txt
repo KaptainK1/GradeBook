@@ -128,3 +128,93 @@ Dec 05, 2018 2:44:05 AM src.com.dylanhoffman.compsci316.logging.Log writeToLog
 WARNING: You may only select a student from the all students list, or the students in course list!
 Dec 05, 2018 2:46:17 AM src.com.dylanhoffman.compsci316.logging.Log writeToLog
 WARNING: You may only select a student from the all students list, or the students in course list!
+Dec 05, 2018 2:47:10 AM src.com.dylanhoffman.compsci316.logging.Log writeToLog
+WARNING: You may only select a student from the all students list, or the students in course list!
+Dec 06, 2018 7:13:59 AM src.com.dylanhoffman.compsci316.logging.Log writeToLog
+WARNING: Duplicate entry '12345' for key 'PRIMARY'
+Dec 06, 2018 7:16:13 AM src.com.dylanhoffman.compsci316.logging.Log writeToLog
+WARNING: For input string: "test"
+Dec 06, 2018 7:16:31 AM src.com.dylanhoffman.compsci316.logging.Log writeToLog
+WARNING: null
+Dec 06, 2018 7:20:41 AM src.com.dylanhoffman.compsci316.logging.Log writeToLog
+WARNING: Duplicate entry '12345678' for key 'PRIMARY'
+Dec 06, 2018 7:22:35 AM src.com.dylanhoffman.compsci316.logging.Log writeToLog
+WARNING: null
+Dec 06, 2018 7:22:55 AM src.com.dylanhoffman.compsci316.logging.Log writeToLog
+WARNING: Cannot delete or update a parent row: a foreign key constraint fails (`gradebook_application`.`gradeitems`, CONSTRAINT `gradeitems_ibfk_1` FOREIGN KEY (`StudentID`) REFERENCES `students` (`studentid`))
+Dec 06, 2018 7:25:29 AM src.com.dylanhoffman.compsci316.logging.Log writeToLog
+WARNING: null
+Dec 06, 2018 7:26:07 AM src.com.dylanhoffman.compsci316.logging.Log writeToLog
+WARNING: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '%'EXAM 3'% AND CourseID = 1 AND StudentID = 12345677' at line 1
+Dec 06, 2018 7:26:11 AM src.com.dylanhoffman.compsci316.logging.Log writeToLog
+WARNING: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '%'EXAM 3'% AND CourseID = 1 AND StudentID = 12345677' at line 1
+Dec 06, 2018 7:55:32 AM src.com.dylanhoffman.compsci316.logging.Log writeToLog
+WARNING: Duplicate entry '12345677' for key 'PRIMARY'
+Dec 06, 2018 7:55:46 AM src.com.dylanhoffman.compsci316.logging.Log writeToLog
+WARNING: Duplicate entry '12345688' for key 'PRIMARY'
+Dec 06, 2018 10:11:27 AM src.com.dylanhoffman.compsci316.logging.Log writeToLog
+WARNING: For input string: "ID"
+Dec 06, 2018 10:26:07 AM src.com.dylanhoffman.compsci316.logging.Log writeToLog
+WARNING: For input string: "ID"
+Dec 06, 2018 2:32:19 PM src.com.dylanhoffman.compsci316.logging.Log writeToLog
+WARNING: null
+Dec 06, 2018 2:32:23 PM src.com.dylanhoffman.compsci316.logging.Log writeToLog
+WARNING: null
+Dec 06, 2018 2:32:34 PM src.com.dylanhoffman.compsci316.logging.Log writeToLog
+WARNING: null
+Dec 06, 2018 2:39:25 PM src.com.dylanhoffman.compsci316.logging.Log writeToLog
+WARNING: null
+Dec 06, 2018 2:39:44 PM src.com.dylanhoffman.compsci316.logging.Log writeToLog
+WARNING: null
+Dec 06, 2018 4:02:44 PM src.com.dylanhoffman.compsci316.logging.Log writeToLog
+WARNING: Duplicate entry '123456' for key 'PRIMARY'
+Dec 06, 2018 4:03:30 PM src.com.dylanhoffman.compsci316.logging.Log writeToLog
+WARNING: Duplicate entry '999999999' for key 'PRIMARY'
+Dec 06, 2018 4:03:46 PM src.com.dylanhoffman.compsci316.logging.Log writeToLog
+WARNING: Invalid student number
+Dec 06, 2018 4:04:01 PM src.com.dylanhoffman.compsci316.logging.Log writeToLog
+WARNING: Invalid student number
+Dec 06, 2018 4:07:15 PM src.com.dylanhoffman.compsci316.logging.Log writeToLog
+WARNING: null
+Dec 06, 2018 4:08:12 PM src.com.dylanhoffman.compsci316.logging.Log writeToLog
+WARNING: null
+Dec 06, 2018 4:08:23 PM src.com.dylanhoffman.compsci316.logging.Log writeToLog
+WARNING: For input string: "ID"
+Dec 06, 2018 4:11:47 PM src.com.dylanhoffman.compsci316.logging.Log writeToLog
+WARNING: For input string: "asdf"
+Dec 06, 2018 4:11:56 PM src.com.dylanhoffman.compsci316.logging.Log writeToLog
+WARNING: null
+Dec 07, 2018 6:47:50 AM src.com.dylanhoffman.compsci316.logging.Log writeToLog
+WARNING: Invalid student number
+Dec 07, 2018 6:48:58 AM src.com.dylanhoffman.compsci316.logging.Log writeToLog
+WARNING: Invalid student number
+Dec 07, 2018 6:48:58 AM src.com.dylanhoffman.compsci316.logging.Log writeToLog
+WARNING: Invalid student number
+Dec 07, 2018 7:19:56 AM src.com.dylanhoffman.compsci316.logging.Log writeToLog
+WARNING: null
+Dec 07, 2018 7:23:01 AM src.com.dylanhoffman.compsci316.logging.Log writeToLog
+WARNING: null
+Dec 07, 2018 7:24:34 AM src.com.dylanhoffman.compsci316.logging.Log writeToLog
+WARNING: null
+Dec 07, 2018 7:25:34 AM src.com.dylanhoffman.compsci316.logging.Log writeToLog
+WARNING: null
+Dec 07, 2018 7:27:44 AM src.com.dylanhoffman.compsci316.logging.Log writeToLog
+WARNING: null
+Dec 07, 2018 7:30:25 AM src.com.dylanhoffman.compsci316.logging.Log writeToLog
+WARNING: null
+Dec 07, 2018 7:35:00 AM src.com.dylanhoffman.compsci316.logging.Log writeToLog
+WARNING: null
+Dec 07, 2018 7:35:19 AM src.com.dylanhoffman.compsci316.logging.Log writeToLog
+WARNING: For input string: ""
+Dec 07, 2018 7:35:41 AM src.com.dylanhoffman.compsci316.logging.Log writeToLog
+WARNING: null
+Dec 07, 2018 7:36:41 AM src.com.dylanhoffman.compsci316.logging.Log writeToLog
+WARNING: null
+Dec 07, 2018 7:51:33 AM src.com.dylanhoffman.compsci316.logging.Log writeToLog
+WARNING: null
+Dec 07, 2018 8:04:03 AM src.com.dylanhoffman.compsci316.logging.Log writeToLog
+WARNING: null
+Dec 07, 2018 8:05:43 AM src.com.dylanhoffman.compsci316.logging.Log writeToLog
+WARNING: null
+Dec 07, 2018 8:06:47 AM src.com.dylanhoffman.compsci316.logging.Log writeToLog
+WARNING: Error with removing Student from gradeitems list

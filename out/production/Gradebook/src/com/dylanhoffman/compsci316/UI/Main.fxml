@@ -18,7 +18,7 @@
                 <fx:include fx:id="students" source="Students.fxml" />
             </content>
           </Tab>
-            <Tab text="Grades">
+            <Tab onSelectionChanged="#initializeGradesTab" text="Grades">
                 <content>
                     <fx:include fx:id="gradeItems" source="GradeItems.fxml" />
                 </content>

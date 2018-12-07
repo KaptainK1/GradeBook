@@ -5,12 +5,31 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ced6009e-22fa-4905-8481-81658185e13a" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/out/production/Gradebook/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Gradebook/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Gradebook/src/ImportCourses.csv" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Gradebook/src/ImportCourses.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Gradebook/src/ImportStudents.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Gradebook/src/com/dylanhoffman/compsci316/UI/CoursesController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Gradebook/src/com/dylanhoffman/compsci316/UI/CoursesController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Gradebook/src/com/dylanhoffman/compsci316/UI/GradeItemsController$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Gradebook/src/com/dylanhoffman/compsci316/UI/GradeItemsController$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Gradebook/src/com/dylanhoffman/compsci316/UI/GradeItemsController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Gradebook/src/com/dylanhoffman/compsci316/UI/GradeItemsController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Gradebook/src/com/dylanhoffman/compsci316/UI/Main.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Gradebook/src/com/dylanhoffman/compsci316/UI/Main.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Gradebook/src/com/dylanhoffman/compsci316/UI/MainController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Gradebook/src/com/dylanhoffman/compsci316/UI/MainController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Gradebook/src/com/dylanhoffman/compsci316/UI/StudentsController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Gradebook/src/com/dylanhoffman/compsci316/UI/StudentsController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Gradebook/src/com/dylanhoffman/compsci316/log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Gradebook/src/com/dylanhoffman/compsci316/log.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Gradebook/src/com/dylanhoffman/compsci316/model/Course.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Gradebook/src/com/dylanhoffman/compsci316/model/Course.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Gradebook/src/com/dylanhoffman/compsci316/model/Student.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Gradebook/src/com/dylanhoffman/compsci316/model/Student.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Gradebook/src/com/dylanhoffman/compsci316/utility/SelectStudentGrades.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Gradebook/src/com/dylanhoffman/compsci316/utility/SelectStudentGrades.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ImportCourses.csv" beforeDir="false" afterPath="$PROJECT_DIR$/src/ImportCourses.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ImportStudents.xlsx" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/dylanhoffman/compsci316/UI/CoursesController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/dylanhoffman/compsci316/UI/CoursesController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/dylanhoffman/compsci316/UI/GradeItems.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/dylanhoffman/compsci316/UI/GradeItems.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/dylanhoffman/compsci316/UI/GradeItemsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/dylanhoffman/compsci316/UI/GradeItemsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/dylanhoffman/compsci316/UI/Main.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/dylanhoffman/compsci316/UI/Main.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/dylanhoffman/compsci316/UI/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/dylanhoffman/compsci316/UI/MainController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/dylanhoffman/compsci316/UI/StudentsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/dylanhoffman/compsci316/UI/StudentsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/dylanhoffman/compsci316/log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/dylanhoffman/compsci316/log.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/dylanhoffman/compsci316/model/Course.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/dylanhoffman/compsci316/model/Course.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/dylanhoffman/compsci316/model/Student.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/dylanhoffman/compsci316/model/Student.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/dylanhoffman/compsci316/utility/Query.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/dylanhoffman/compsci316/utility/Query.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/dylanhoffman/compsci316/utility/SelectStudentGrades.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/dylanhoffman/compsci316/utility/SelectStudentGrades.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -27,28 +46,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/dylanhoffman/compsci316/UI/CoursesController.java">
+        <entry file="file://$PROJECT_DIR$/src/com/dylanhoffman/compsci316/model/Student.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1980">
-              <caret line="158" column="5" lean-forward="true" selection-start-line="158" selection-start-column="5" selection-end-line="158" selection-end-column="5" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/dylanhoffman/compsci316/UI/MainController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="4" column="49" lean-forward="true" selection-start-line="4" selection-start-column="49" selection-end-line="4" selection-end-column="49" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/dylanhoffman/compsci316/UI/StudentsController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="405">
-              <caret line="27" column="38" lean-forward="true" selection-start-line="27" selection-start-column="38" selection-end-line="27" selection-end-column="38" />
+            <state relative-caret-position="795">
+              <caret line="53" column="5" selection-start-line="53" selection-start-column="5" selection-end-line="53" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -57,10 +58,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/dylanhoffman/compsci316/model/Student.java">
+        <entry file="file://$PROJECT_DIR$/src/com/dylanhoffman/compsci316/UI/MainController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="738">
-              <caret line="158" lean-forward="true" selection-start-line="158" selection-end-line="158" />
+            <state relative-caret-position="75">
+              <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -69,10 +70,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/com/dylanhoffman/compsci316/UI/GradeItemsController.java">
+        <entry file="file://$PROJECT_DIR$/src/com/dylanhoffman/compsci316/UI/StudentsController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="404">
-              <caret line="110" lean-forward="true" selection-start-line="110" selection-end-line="110" />
+            <state relative-caret-position="381">
+              <caret line="53" column="33" selection-start-line="53" selection-start-column="33" selection-end-line="53" selection-end-column="33" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -81,13 +82,61 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/dylanhoffman/compsci316/model/file_processing/ProcessCourseFile.java">
+        <entry file="file://$PROJECT_DIR$/src/com/dylanhoffman/compsci316/utility/SelectStudentGrades.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="10" column="66" selection-start-line="10" selection-start-column="66" selection-end-line="10" selection-end-column="66" />
+            <state relative-caret-position="1125">
+              <caret line="84" column="71" selection-start-line="84" selection-start-column="71" selection-end-line="84" selection-end-column="71" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/dylanhoffman/compsci316/model/Course.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="870">
+              <caret line="67" column="25" selection-start-line="67" selection-start-column="25" selection-end-line="67" selection-end-column="25" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/dylanhoffman/compsci316/UI/GradeItemsController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="465">
+              <caret line="47" column="62" selection-start-line="47" selection-start-column="62" selection-end-line="47" selection-end-column="62" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/dylanhoffman/compsci316/model/grading/InvalidGradeException.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="75">
+              <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/dylanhoffman/compsci316/model/Assignment.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="330">
+              <caret line="23" column="27" selection-start-line="23" selection-start-column="27" selection-end-line="23" selection-end-column="49" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/dylanhoffman/compsci316/UI/stylesheet.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="555">
+              <caret line="37" column="1" selection-start-line="37" selection-start-column="1" selection-end-line="37" selection-end-column="1" />
             </state>
           </provider>
         </entry>
@@ -147,8 +196,6 @@
         <option value="$PROJECT_DIR$/src/com/dylanhoffman/compsci316/model/Quiz.java" />
         <option value="$PROJECT_DIR$/src/com/dylanhoffman/compsci316/logging/Log.java" />
         <option value="$PROJECT_DIR$/src/com/dylanhoffman/compsci316/Main.java" />
-        <option value="$PROJECT_DIR$/src/com/dylanhoffman/compsci316/utility/SelectStudentGrades.java" />
-        <option value="$PROJECT_DIR$/src/com/dylanhoffman/compsci316/utility/Query.java" />
         <option value="$PROJECT_DIR$/src/com/dylanhoffman/compsci316/UI/Students.fxml" />
         <option value="$PROJECT_DIR$/src/com/dylanhoffman/compsci316/model/file_processing/ProcessFile.java" />
         <option value="$PROJECT_DIR$/src/com/dylanhoffman/compsci316/SchoolObjects.java" />
@@ -157,19 +204,22 @@
         <option value="$PROJECT_DIR$/src/com/dylanhoffman/compsci316/model/file_processing/ProcessCourseFile.java" />
         <option value="$PROJECT_DIR$/src/com/dylanhoffman/compsci316/Constants.java" />
         <option value="$PROJECT_DIR$/src/com/dylanhoffman/compsci316/model/file_processing/ProcessGradeItemFile.java" />
-        <option value="$PROJECT_DIR$/src/com/dylanhoffman/compsci316/model/Course.java" />
         <option value="$PROJECT_DIR$/src/com/dylanhoffman/compsci316/model/file_processing/ProcessStudentFile.java" />
-        <option value="$PROJECT_DIR$/src/com/dylanhoffman/compsci316/UI/MainController.java" />
         <option value="$PROJECT_DIR$/src/com/dylanhoffman/compsci316/UI/CoursesController.java" />
-        <option value="$PROJECT_DIR$/src/com/dylanhoffman/compsci316/UI/StudentsController.java" />
+        <option value="$PROJECT_DIR$/src/com/dylanhoffman/compsci316/UI/MainController.java" />
         <option value="$PROJECT_DIR$/src/com/dylanhoffman/compsci316/model/Student.java" />
+        <option value="$PROJECT_DIR$/src/com/dylanhoffman/compsci316/utility/Query.java" />
+        <option value="$PROJECT_DIR$/src/com/dylanhoffman/compsci316/utility/SelectStudentGrades.java" />
+        <option value="$PROJECT_DIR$/src/com/dylanhoffman/compsci316/model/Course.java" />
         <option value="$PROJECT_DIR$/src/com/dylanhoffman/compsci316/UI/GradeItemsController.java" />
+        <option value="$PROJECT_DIR$/src/com/dylanhoffman/compsci316/UI/StudentsController.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" fullScreen="true">
+    <option name="y" value="173" />
     <option name="width" value="1680" />
-    <option name="height" value="1050" />
+    <option name="height" value="955" />
   </component>
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="1" id="Add" />
@@ -224,7 +274,22 @@
               <item name="Gradebook" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="compsci316" type="462c0819:PsiDirectoryNode" />
+              <item name="model" type="462c0819:PsiDirectoryNode" />
+              <item name="grading" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Gradebook" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Gradebook" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="compsci316" type="462c0819:PsiDirectoryNode" />
               <item name="UI" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Gradebook" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Gradebook" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="compsci316" type="462c0819:PsiDirectoryNode" />
+              <item name="utility" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Gradebook" type="b2602c69:ProjectViewProjectNode" />
@@ -239,14 +304,14 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1543985098329" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1544136318520" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -398,7 +463,9 @@
       <workItem from="1543715119817" duration="3623000" />
       <workItem from="1543896033837" duration="283000" />
       <workItem from="1543896971394" duration="66000" />
-      <workItem from="1543897067895" duration="2464000" />
+      <workItem from="1543897067895" duration="8014000" />
+      <workItem from="1544101404345" duration="10813000" />
+      <workItem from="1544186819181" duration="45000" />
     </task>
     <task id="LOCAL-00001" summary="Updated StudentsController">
       <created>1543226396849</created>
@@ -411,13 +478,13 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="238117000" />
+    <option name="totallyTimeSpent" value="254525000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.14896215" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.15220049" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -426,14 +493,14 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32857144" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4993895" weight="0.32857144" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4987775" weight="0.32822084" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.31530613" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Terminal" order="8" />
-      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.50061053" side_tool="true" weight="0.32857144" />
+      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5012225" side_tool="true" weight="0.32822084" />
       <window_info anchor="bottom" id="Version Control" order="10" show_stripe_button="false" />
       <window_info anchor="bottom" id="Messages" order="11" weight="0.32857144" />
       <window_info anchor="bottom" id="Docker" order="12" show_stripe_button="false" />
@@ -461,12 +528,6 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/com/dylanhoffman/compsci316/UI/StudentsController.java</url>
-          <line>138</line>
-          <properties />
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/com/dylanhoffman/compsci316/model/file_processing/ProcessCourseFile.java</url>
           <line>11</line>
           <properties />
@@ -476,13 +537,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home/javafx-src.zip!/javafx/collections/MapChangeListener.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="57" selection-start-line="57" selection-end-line="57" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home/javafx-src.zip!/javafx/scene/layout/Pane.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="413">
@@ -553,14 +607,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/dylanhoffman/compsci316/UI/GradeItems.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder" />
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="62" selection-start-line="10" selection-start-column="62" selection-end-line="10" selection-end-column="62" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/dylanhoffman/compsci316/UI/AlertBox.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="390">
@@ -575,28 +621,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/dylanhoffman/compsci316/UI/stylesheet.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="555">
-          <caret line="37" column="1" selection-start-line="37" selection-start-column="1" selection-end-line="37" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/dylanhoffman/compsci316/UI/Main.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder" />
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="18" lean-forward="true" selection-start-line="14" selection-start-column="18" selection-end-line="14" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/dylanhoffman/compsci316/UI/Courses.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder" />
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="191">
           <caret line="14" column="24" lean-forward="true" selection-start-line="14" selection-start-column="24" selection-end-line="14" selection-end-column="24" />
         </state>
       </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder" />
     </entry>
     <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home/javafx-src.zip!/javafx/stage/Window.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -634,13 +665,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/log.txt" />
-    <entry file="file://$PROJECT_DIR$/src/com/dylanhoffman/compsci316/logging/Log.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="465">
-          <caret line="34" selection-start-line="34" selection-end-line="34" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/dylanhoffman/compsci316/utility/QueryType.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
@@ -648,31 +672,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/dylanhoffman/compsci316/model/Assignment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="23" column="27" lean-forward="true" selection-start-line="23" selection-start-column="27" selection-end-line="23" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/dylanhoffman/compsci316/model/Exam.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
           <caret line="9" selection-start-line="9" selection-end-line="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/dylanhoffman/compsci316/log.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" selection-start-line="14" selection-end-line="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/dylanhoffman/compsci316/utility/SelectStudentGrades.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="72" selection-start-line="14" selection-start-column="72" selection-end-line="14" selection-end-column="72" />
         </state>
       </provider>
     </entry>
@@ -727,42 +730,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/dylanhoffman/compsci316/utility/Query.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1485">
-          <caret line="102" selection-start-line="102" selection-end-line="102" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#4746#4747#0" expanded="true" />
-            <element signature="e#4772#4773#0" expanded="true" />
-            <element signature="e#5063#5064#0" expanded="true" />
-            <element signature="e#5092#5093#0" expanded="true" />
-            <element signature="e#5406#5407#0" expanded="true" />
-            <element signature="e#5435#5436#0" expanded="true" />
-            <element signature="e#5745#5746#0" expanded="true" />
-            <element signature="e#5776#5777#0" expanded="true" />
-            <element signature="e#6099#6100#0" expanded="true" />
-            <element signature="e#6131#6132#0" expanded="true" />
-            <element signature="e#6479#6480#0" expanded="true" />
-            <element signature="e#6508#6509#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/dylanhoffman/compsci316/model/file_processing/ProcessStudentFile.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
           <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/dylanhoffman/compsci316/model/Course.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="21" column="13" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -794,6 +765,14 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/dylanhoffman/compsci316/UI/Students.fxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="690">
+          <caret line="46" column="140" selection-start-line="46" selection-start-column="127" selection-end-line="46" selection-end-column="140" />
+        </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/dylanhoffman/compsci316/model/file_processing/ProcessCourseFile.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
@@ -806,47 +785,101 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/dylanhoffman/compsci316/UI/DisplayBox.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
+        <state relative-caret-position="477">
           <caret line="47" column="22" lean-forward="true" selection-start-line="47" selection-start-column="22" selection-end-line="47" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/dylanhoffman/compsci316/UI/MainController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="49" lean-forward="true" selection-start-line="4" selection-start-column="49" selection-end-line="4" selection-end-column="49" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/dylanhoffman/compsci316/UI/CoursesController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1980">
-          <caret line="158" column="5" lean-forward="true" selection-start-line="158" selection-start-column="5" selection-end-line="158" selection-end-column="5" />
+        <state relative-caret-position="315">
+          <caret line="55" selection-start-line="55" selection-end-line="59" selection-end-column="38" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/dylanhoffman/compsci316/UI/Students.fxml">
+    <entry file="file://$PROJECT_DIR$/src/com/dylanhoffman/compsci316/UI/GradeItems.fxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="735">
+          <caret line="49" column="41" lean-forward="true" selection-start-line="49" selection-start-column="41" selection-end-line="49" selection-end-column="41" />
+        </state>
+      </provider>
       <provider editor-type-id="JavaFX-Scene-Builder" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/dylanhoffman/compsci316/UI/Main.fxml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="690">
-          <caret line="46" column="140" selection-start-line="46" selection-start-column="127" selection-end-line="46" selection-end-column="140" />
+        <state relative-caret-position="255">
+          <caret line="17" column="64" lean-forward="true" selection-start-line="17" selection-start-column="64" selection-end-line="17" selection-end-column="64" />
+        </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/dylanhoffman/compsci316/utility/Query.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="60" column="27" lean-forward="true" selection-start-line="60" selection-start-column="27" selection-end-line="60" selection-end-column="27" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#4746#4747#0" expanded="true" />
+            <element signature="e#4772#4773#0" expanded="true" />
+            <element signature="e#5063#5064#0" expanded="true" />
+            <element signature="e#5092#5093#0" expanded="true" />
+            <element signature="e#5406#5407#0" expanded="true" />
+            <element signature="e#5435#5436#0" expanded="true" />
+            <element signature="e#5745#5746#0" expanded="true" />
+            <element signature="e#5776#5777#0" expanded="true" />
+            <element signature="e#6099#6100#0" expanded="true" />
+            <element signature="e#6131#6132#0" expanded="true" />
+            <element signature="e#6479#6480#0" expanded="true" />
+            <element signature="e#6508#6509#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/dylanhoffman/compsci316/UI/StudentsController.java">
+    <entry file="file://$PROJECT_DIR$/src/com/dylanhoffman/compsci316/log.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="27" column="38" lean-forward="true" selection-start-line="27" selection-start-column="38" selection-end-line="27" selection-end-column="38" />
+        <state relative-caret-position="-238">
+          <caret line="134" column="58" selection-start-line="134" selection-start-column="58" selection-end-line="134" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/dylanhoffman/compsci316/logging/Log.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="27" column="53" lean-forward="true" selection-start-line="27" selection-start-column="53" selection-end-line="27" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/dylanhoffman/compsci316/model/Student.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="795">
+          <caret line="53" column="5" selection-start-line="53" selection-start-column="5" selection-end-line="53" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/dylanhoffman/compsci316/model/Student.java">
+    <entry file="file://$PROJECT_DIR$/src/com/dylanhoffman/compsci316/UI/MainController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="738">
-          <caret line="158" lean-forward="true" selection-start-line="158" selection-end-line="158" />
+        <state relative-caret-position="75">
+          <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/dylanhoffman/compsci316/utility/SelectStudentGrades.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1125">
+          <caret line="84" column="71" selection-start-line="84" selection-start-column="71" selection-end-line="84" selection-end-column="71" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/dylanhoffman/compsci316/model/Course.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="870">
+          <caret line="67" column="25" selection-start-line="67" selection-start-column="25" selection-end-line="67" selection-end-column="25" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -855,8 +888,39 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/dylanhoffman/compsci316/UI/GradeItemsController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="404">
-          <caret line="110" lean-forward="true" selection-start-line="110" selection-end-line="110" />
+        <state relative-caret-position="465">
+          <caret line="47" column="62" selection-start-line="47" selection-start-column="62" selection-end-line="47" selection-end-column="62" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/dylanhoffman/compsci316/model/grading/InvalidGradeException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/dylanhoffman/compsci316/model/Assignment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="23" column="27" selection-start-line="23" selection-start-column="27" selection-end-line="23" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/dylanhoffman/compsci316/UI/stylesheet.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="555">
+          <caret line="37" column="1" selection-start-line="37" selection-start-column="1" selection-end-line="37" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/dylanhoffman/compsci316/UI/StudentsController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="381">
+          <caret line="53" column="33" selection-start-line="53" selection-start-column="33" selection-end-line="53" selection-end-column="33" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

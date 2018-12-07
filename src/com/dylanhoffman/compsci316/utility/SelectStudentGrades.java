@@ -46,41 +46,8 @@ public class SelectStudentGrades {
      * @param courseID to hold the course's id, a unique identifier
      * @param dbColumn to hold the the database column to retrieve
      * @return returns the value of all the rows in the column param
+     * @throws SQLException Throws SQL Exception on error with Database
      */
-//    public int executeStudentCorrectQuery(int studentID, int courseID, String dbColumn){
-////        String query = (new StringBuilder().append(getQueryType().toString()).append(" ").append(getStrSelect())).toString();
-//        String query = "SELECT " + dbColumn +  " from GradeItems where StudentID = " + studentID + " AND CourseID = " + courseID;
-//        int rowCount = 0;
-//        int total = 0;
-//
-//        try (
-//                //create the connection object, then create the statement object
-//                Connection connection = DriverManager.getConnection( getUrl() + getDbName() + "?useSSL=false&serverTimezone=UTC", getDbUser(), getDbPass());
-//                Statement statement = connection.prepareStatement(query)
-//        ) {
-//
-//            System.out.println("SQL Select Statement is " + query);
-//            ResultSet result = statement.executeQuery(query);
-//            ResultSetMetaData resultDataSet = result.getMetaData();
-//            int columns = resultDataSet.getColumnCount();
-//
-//            while(result.next()) {   // Move the cursor to the next row, return false if no more rows
-//                for (int i = 1; i <= columns; i++) {
-//                    //print out each cell value for all columns and rows
-//                        total+=result.getInt(dbColumn);
-//                    }
-//                }
-//                ++rowCount;
-//
-//            System.out.println("Total number of records = " + rowCount);
-//        }
-//        catch (SQLException ex){
-//            Log.writeToLog(Constants.getLogPath(), ex.getMessage());
-//            ex.printStackTrace();
-//        }
-//        System.out.println(total);
-//        return total;
-//    }
 
     public int executeStudentCorrectQueryThrows(int studentID, int courseID, String dbColumn) throws SQLException{
 //        String query = (new StringBuilder().append(getQueryType().toString()).append(" ").append(getStrSelect())).toString();
@@ -115,56 +82,8 @@ public class SelectStudentGrades {
      * then returns the arraylist of students
      * @param course object to hold the course object for all the students you wish to grade
      * @return returns an arraylist of student objects
+     * @throws SQLException Throws SQL Exception on error with Database
      */
-//    public ArrayList<Student> executeStudentQuery(Course course){
-////        String query = (new StringBuilder().append(getQueryType().toString()).append(" ").append(getStrSelect())).toString();
-////        String query = "SELECT * from Students where CourseID = " + course.getCourseID();
-//
-//        String query = "SELECT DISTINCT s.firstname, s.lastname, s.studentid, c.coursename FROM gradeitems " +
-//        "INNER JOIN courses AS c ON c.courseid = gradeitems.courseid " +
-//        "INNER JOIN students AS s ON s.studentid = gradeitems.studentid " +
-//        "WHERE c.courseid = " + course.getCourseID();
-//
-//        int rowCount = 1;
-//        ArrayList<Student> allStudents = new ArrayList<>();
-//        String firstName;
-//        String lastName;
-//        int studentID;
-//
-//        try (
-//                //create the connection object, then create the statement object
-//                Connection connection = DriverManager.getConnection( getUrl() + getDbName() + "?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true", getDbUser(), getDbPass());
-//                Statement statement = connection.prepareStatement(query)
-//        ) {
-//
-//            System.out.println("SQL Select Statement is " + query);
-//            ResultSet result = statement.executeQuery(query);
-//            ResultSetMetaData resultDataSet = result.getMetaData();
-//            int columns = resultDataSet.getColumnCount();
-//
-//            System.out.println("The records selected are:");
-//
-//            while(result.next()) {   // Move the cursor to the next row, return false if no more rows
-////                for (int i = 1; i <= columns; i++) {
-//                    //print out each cell value for all columns and rows
-//                    firstName=result.getString("FirstName");
-//                    lastName=result.getString("LastName");
-//                    studentID=result.getInt("StudentID");
-//                    allStudents.add(new Student(firstName,lastName,studentID));
-////                }
-//            }
-//            ++rowCount;
-//
-//            System.out.println("Total number of records = " + rowCount);
-//        }
-//        catch (SQLException ex){
-//            Log.writeToLog(Constants.getLogPath(), ex.getMessage());
-//            ex.printStackTrace();
-//        }
-//
-//        return allStudents;
-//    }
-
     public ArrayList<Student> executeStudentQueryThrows(Course course) throws SQLException{
 //        String query = (new StringBuilder().append(getQueryType().toString()).append(" ").append(getStrSelect())).toString();
 //        String query = "SELECT * from Students where CourseID = " + course.getCourseID();
@@ -245,54 +164,6 @@ public class SelectStudentGrades {
 
         return allStudents;
     }
-
-//    public ArrayList<Course> executeCourseQuery(){
-////        String query = (new StringBuilder().append(getQueryType().toString()).append(" ").append(getStrSelect())).toString();
-////        String query = "SELECT * from Students where CourseID = " + course.getCourseID();
-//
-//        String query = "SELECT CourseID, CourseNum, CourseName, CourseGradeModel FROM Courses";
-//
-//        int rowCount = 1;
-//        ArrayList<Course> allCourses = new ArrayList<>();
-//        int courseid;
-//        int courseNum;
-//        String courseName;
-//        String courseGradeModel;
-//
-//        try (
-//                //create the connection object, then create the statement object
-//                Connection connection = DriverManager.getConnection( getUrl() + getDbName() + "?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true", getDbUser(), getDbPass());
-//                Statement statement = connection.prepareStatement(query)
-//        ) {
-//
-//            System.out.println("SQL Select Statement is " + query);
-//            ResultSet result = statement.executeQuery(query);
-//            ResultSetMetaData resultDataSet = result.getMetaData();
-//            int columns = resultDataSet.getColumnCount();
-//
-//            System.out.println("The records selected are:");
-//
-//            while(result.next()) {   // Move the cursor to the next row, return false if no more rows
-////                for (int i = 1; i <= columns; i++) {
-//                //print out each cell value for all columns and rows
-//                courseid=result.getInt("CourseID");
-//                courseNum=result.getInt("CourseNum");
-//                courseName=result.getString("CourseName");
-//                courseGradeModel=result.getString("CourseGradeModel");
-//                allCourses.add(new Course(courseid,courseNum,courseName,Course.convertGradeModel(courseGradeModel)));
-////                }
-//            }
-//            ++rowCount;
-//
-//            System.out.println("Total number of records = " + rowCount);
-//        }
-//        catch (SQLException ex){
-//            Log.writeToLog(Constants.getLogPath(), ex.getMessage());
-//            ex.printStackTrace();
-//        }
-//
-//        return allCourses;
-//    }
 
     public ArrayList<Course> executeCourseQueryThrows() throws SQLException{
 //        String query = (new StringBuilder().append(getQueryType().toString()).append(" ").append(getStrSelect())).toString();

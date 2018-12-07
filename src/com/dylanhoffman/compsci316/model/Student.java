@@ -81,6 +81,7 @@ public class Student {
      * accepts 2 parameters
      * @param gradeItems an array of GradeItem objects
      * @param course a course that the gradeitem is for
+     * @throws SQLException Throws SQL Exception on error with Database
      */
     public void insertMultipleGradeItems(ArrayList<GradeItem> gradeItems, Course course) throws SQLException{
         for (GradeItem currentGradeItem: gradeItems) {
@@ -94,6 +95,7 @@ public class Student {
      * accepts two parameters
      * @param gradeItem an GradeItem object to be inserted
      * @param course the course object the gradeitem is for
+     * @throws SQLException Throws SQL Exception on error with Database
      */
     public void insertGradeItem(GradeItem gradeItem, Course course) throws SQLException {
         //first, run the course's grade method to assign a grade letter to the grade item
@@ -108,6 +110,7 @@ public class Student {
 
     /**
      * method for inserting a single student into the Database
+     * @throws SQLException Throws SQL Exception on error with Database
      */
     //method for inserting a single student into the current course
     public void insertStudent() throws SQLException{
@@ -122,6 +125,7 @@ public class Student {
 
     /**
      * method for inserting a single student into the Database
+     * @throws SQLException Throws SQL Exception on error with Database
      */
     //method for inserting a single student into the current course
     public static void insertStudent(String firstName, String lastName, int studentID) throws SQLException {
@@ -187,6 +191,7 @@ public class Student {
      * public method for inserting multiple students into the Database
      * makes us of method insertStudent
      * @param student accepts the parameter of 1 student ArrayList
+     * @throws SQLException Throws SQL Exception on error with Database
      */
     public void insertMultipleStudents(ArrayList<Student> student) throws SQLException{
         for (Student currentStudent: student) {
@@ -197,6 +202,7 @@ public class Student {
     /**
      * public method to delete all gradeitems from a course for a student
      * @param course the course object
+     * @throws SQLException Throws SQL Exception on error with Database
      */
     public void deleteAllGradeItemsInCourse(Course course) throws SQLException{
 
@@ -219,6 +225,7 @@ public class Student {
      * accepts 2 parameters
      * @param studentID the id of the student to delete all the grade items
      * @param courseID the course to delete the student grade items
+     * @throws SQLException Throws SQL Exception on error with Database
      */
     public static void deleteAllGradeItemsInCourse(int studentID, int courseID) throws SQLException{
 
@@ -233,11 +240,12 @@ public class Student {
      * @param studentID the id of the student
      * @param courseID the id of the course
      * @param nameOfGradeItem the name of the gradeitem
+     * @throws SQLException Throws SQL Exception on error with Database
      */
     public static void deleteSingleGradeItem(int studentID, int courseID, String nameOfGradeItem, int totalCorrect, int totalPossible) throws SQLException{
         //build the query
         String strDelete = " FROM GradeItems WHERE TotalCorrect = " + totalCorrect + " AND TotalPossible = " + totalPossible +
-                " AND NAME LIKE %'" + nameOfGradeItem + "'% AND CourseID = " + courseID +
+                " AND NAME LIKE '%" + nameOfGradeItem + "%' AND CourseID = " + courseID +
                 " AND StudentID = " + studentID;
 
         //create the query object
@@ -252,6 +260,7 @@ public class Student {
      * overloaded method that accepts 2 parameters
      * @param course the course object
      * @param gradeItem the gradeitem object to be deleted
+     * @throws SQLException Throws SQL Exception on error with Database
      */
     public void deleteSingleGradeItem(Course course, GradeItem gradeItem) throws SQLException{
         //build the query
@@ -274,6 +283,24 @@ public class Student {
 
         //build the query
         String strDelete = "from Students WHERE studentID = " + studentID;
+
+        //create the query object
+        Query deleteQuery = new Query(Constants.getDbName(), Constants.getDbUsername(), Constants.getDbPassword(), DELETE, strDelete );
+
+        //execute the query
+        deleteQuery.executeQueryThrows();
+    }
+
+    /**
+     * public  method to delete a student from the Database
+     * method also deletes all gradeitems for the student
+     */
+    public  void deleteStudent() throws SQLException{
+        //first delete all grade items for the student
+//        deleteAllGradeItemsForStudent(studentID);
+
+        //build the query
+        String strDelete = "from Students WHERE studentID = " + this.studentID;
 
         //create the query object
         Query deleteQuery = new Query(Constants.getDbName(), Constants.getDbUsername(), Constants.getDbPassword(), DELETE, strDelete );
@@ -311,7 +338,7 @@ public class Student {
 
     /**
      * public getter method for the student id
-     * @return
+     * @return the student id
      */
     public int getStudentID() {
         return studentID;

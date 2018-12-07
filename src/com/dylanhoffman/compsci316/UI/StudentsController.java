@@ -21,6 +21,10 @@ import java.util.InputMismatchException;
 import java.util.NoSuchElementException;
 
 
+/**
+ * Class for interacting with the Student UI
+ * Extends the main controller class
+ */
 public class StudentsController extends MainController{
 
 
@@ -36,12 +40,16 @@ public class StudentsController extends MainController{
     @FXML
     private GridPane studentContainer;
 
+    /**
+     * Method for inserting a student into the database
+     * @param event button click
+     */
     @FXML
     void insertStudent(ActionEvent event) {
-
         try {
-            Student.insertStudent(studentFirstName.getText().trim(), studentLastName.getText().trim(), Integer.parseInt(studentStudentID.getText().trim()));
-            super.displayAlertBox("Student Added! ", studentFirstName.getText().trim() + " " + studentLastName.getText().trim());
+            Student student = new Student(studentFirstName.getText().trim(), studentLastName.getText().trim(), Integer.parseInt(studentStudentID.getText().trim()));
+            student.insertStudent();
+            super.displayDisplayBox("Student Added Successfully!", studentFirstName.getText().trim() + " Was successfully added!");
         } catch (InputMismatchException e){
             Log.writeToLog(Constants.getLogPath(),e.getMessage());
             clearFieldsOnDataException();
@@ -64,7 +72,6 @@ public class StudentsController extends MainController{
             super.displayAlertBox("Generic Error with Adding Student", "Please Check the data entered for the student and try again.");
         }
 
-        super.displayDisplayBox("Student Added Successfully!", studentFirstName.getText().trim() + " Was successfully added!");
     }
 
     @FXML
@@ -90,32 +97,41 @@ public class StudentsController extends MainController{
     @FXML
     void deleteStudent(ActionEvent event) {
 
+        boolean isError = false;
+
         ConfirmBox confirmBox = new ConfirmBox();
         confirmBox.displayConfirmBox("Warning! Data loss possible!", "Are you sure you want to delete this Student?",
                 Constants.getCssPath());
         if (confirmBox.getIsUserChoice()) {
             try {
-                Student.deleteStudent(Integer.parseInt(studentStudentID.getText().trim()));
-            } catch (SQLException e) {
-                Log.writeToLog(Constants.getLogPath(), e.getMessage());
-                super.displayAlertBox("Cannot Delete the Course", e.getMessage());
+                Student student = new Student(studentFirstName.getText().trim(), studentLastName.getText().trim(), Integer.parseInt(studentStudentID.getText().trim()));
+                student.deleteStudent();
+//                 if (!this.removeStudentFromAllStudentsList(student))
+//                        Log.writeToLog(Constants.getLogPath(), "Error with removing Student from gradeitems list");
 
+            } catch (SQLException e) {
+                isError=true;
+                Log.writeToLog(Constants.getLogPath(), e.getMessage());
+                super.displayAlertBox("Cannot Delete the Course", "Student currently has active Gradeitems, please remove those before retrying");
             } catch (InputMismatchException e) {
+                isError=true;
                 Log.writeToLog(Constants.getLogPath(), e.getMessage());
                 clearFieldsOnDataException();
                 super.displayAlertBox("Error with Student Data!", "Error with data entered for the student. Please check your input and try again.");
             } catch (IllegalArgumentException e) {
+                isError=true;
                 Log.writeToLog(Constants.getLogPath(), e.getMessage());
                 clearFieldsOnDataException();
                 super.displayAlertBox("Error with Student Data!", e.getMessage());
             } catch (Exception e) {
+                isError=true;
                 Log.writeToLog(Constants.getLogPath(), e.getMessage());
                 clearFieldsOnDataException();
                 super.displayAlertBox("Generic Error with Adding Student", "Please Check the data entered for the student and try again.");
             }
 
-            super.displayAlertBox("Student Deleted! ", studentFirstName.getText().trim() + " " + studentLastName.getText().trim());
-
+            if (!isError)
+                super.displayAlertBox("Student Deleted! ", studentFirstName.getText().trim() + " " + studentLastName.getText().trim());
         }
 
     }
@@ -148,73 +164,21 @@ public class StudentsController extends MainController{
 
     }
 
-//    //method for processing an imported file
-//    public void processFile(File file){
 //
-//        //buffer reader object to read the file that is passed in
-//        BufferedReader bufferedReader = null;
-//
-//        //string variable to hold the next line to be read by the buffer reader
-//        String nextLine;
+//    public boolean removeStudentFromAllStudentsList(Student student){
 //
 //        try {
-//
-//            bufferedReader = new BufferedReader(new FileReader(file));
-//
-//            while((nextLine = bufferedReader.readLine()) != null){
-//
-//                //set the current line to the next line split by the delimiter
-//                String values[] = nextLine.trim().split(Constants.getDelimiter());
-//                int id;
-//                String firstName;
-//                String lastName;
-//
-//                try {
-//                    //set the id to the first column, need to use substring due to quotes
-//                    id = Integer.valueOf(values[0].substring(1));
-//
-//                    //set the num of the course to the 2nd column
-//                    firstName = values[1];
-//
-//                    //set the name to the 3rd column
-//                    lastName = values[2];
-//
-//                    Student.insertStudent(firstName,lastName,id);
-//
-//                } catch (NumberFormatException e){
-//                    Log.writeToLog(Constants.getLogPath(),e.getMessage());
-//                    super.displayAlertBox("Error with Imported Data",
-//                            e.getMessage() + "\n Is not valid input. Aborting Row import and continuing");
-//
-//                } catch (SQLIntegrityConstraintViolationException e) {
-//                    Log.writeToLog(Constants.getLogPath(),e.getMessage());
-//                    super.displayAlertBox("Error with the Data", "Cannot enter duplicate ID for Course!");
-//                    e.printStackTrace();
-//                }catch (SQLException e) {
-//                    Log.writeToLog(Constants.getLogPath(),e.getMessage());
-//                    super.displayAlertBox("Error with the Database", e.getMessage());
-//                    e.printStackTrace();
-//                }
-//            }
-//
-//        } catch (IOException | NoSuchElementException e) {
-//            Log.writeToLog(Constants.getLogPath(),e.getMessage());
-//            super.displayAlertBox("Error with Importing", e.getMessage());
-//        } catch (NumberFormatException e){
-//            Log.writeToLog(Constants.getLogPath(),e.getMessage());
-//            super.displayAlertBox("Error with Number", "Record Skipped");
+//            super.getGradeItemsController().populateAllStudents.remove(student);
+//            super.getGradeItemsController().allStudentsListView.getItems().remove(student);
+//            super.getGradeItemsController().allStudentsAvailable.remove(student);
+//        } catch (Exception e){
+//            return false;
 //        }
-//
-//        //cleanup the buffer reader obj
-//        finally {
-//            try {
-//                if (bufferedReader != null)
-//                    bufferedReader.close();
-//            } catch (IOException e) {
-//                e.printStackTrace();
-//            }
-//        }
+//        return true;
 //    }
+
+
+
 
 
 }

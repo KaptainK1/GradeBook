@@ -1,8 +1,4 @@
 "ID,NUM,NAME,GRADEMODEL"
-"100001,101,Intro to Economics,HighSchoolGradeModel"
-"100002,101,Mathematics,HighSchoolGradeModel"
 "100003,201,Macro Economics,HighSchoolGradeModel"
-"100004,201,Statistics,HighSchoolGradeModel"
 "100005,201,Pre-Calculus,HighSchoolGradeModel"
 "100006,301,Calculus,CollegeGradeModel"
-"100007,301,Micro Economics,CollegeGradeModel"

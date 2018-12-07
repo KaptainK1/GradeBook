@@ -52,7 +52,7 @@ public class Query {
      * @param dbPass String dbPass to hold the password
      * @param queryType Enum queryType can be INSERT,UPDATE,DELETE, OR SELECT
      * @param strQuery String strQuery to hold the query to be executed
-     * @param url
+     * @param url url to connect to the db
      */
 
     public Query(String dbName, String dbUser, String dbPass, QueryType queryType, String strQuery, String url){
